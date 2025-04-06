@@ -1,310 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wildy Riftian | About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kezia Sagala - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+      background-color: #1a1a1a;
+    }
+
+    /* Sidebar - Updated to match exact content */
+    .sidebar {
+      background-color: #111;
+      color: #fff;
+      width: 80%;
+      max-width: 400px;
+      position: fixed;
+      right: -80%;
+      top: 0;
+      height: 100vh;
+      padding: 40px 30px;
+      transition: right 0.3s ease;
+      z-index: 1000;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .intro {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .sidebar .intro p {
+      margin-bottom: 15px;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #f78da7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul.skillsets li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .sidebar ul.skillsets li:before {
+      content: "0" counter(item);
+      counter-increment: item;
+      position: absolute;
+      left: 0;
+      color: #f78da7;
+      font-weight: bold;
+    }
+
+    .sidebar ul.softwares li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .sidebar ul.softwares li:before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      color: #f78da7;
+    }
+
+    .sidebar .contact-info {
+      font-size: 16px;
+    }
+
+    .sidebar .contact-info p {
+      margin-bottom: 15px;
+    }
+
+    .sidebar .contact-info strong {
+      display: block;
+      color: #f78da7;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar a:hover {
+      color: #f78da7;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #333;
+      margin: 25px 0;
+    }
+
+    /* Tab to open sidebar - Fixed positioning */
+    .sidebar-tab {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #111;
+      color: #fff;
+      padding: 15px 8px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1001;
+      border-radius: 8px 0 0 8px;
+      transition: right 0.3s ease;
+    }
+
+    .sidebar.open ~ .sidebar-tab {
+      right: 400px;
+    }
+
+    /* Main content */
+    .main {
+      flex-grow: 1;
+      background-color: #1a1a1a;
+      padding: 60px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .main h2 {
+      font-size: 32px;
+      color: #f78da7;
+      margin-bottom: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .main .section {
+      margin-bottom: 60px;
+    }
+
+    .main .section h3 {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .main .entry {
+      margin-bottom: 25px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .main .entry:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #f78da7;
+      font-size: 20px;
+    }
+
+    .main .entry .title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .main .entry .info {
+      font-size: 16px;
+      color: #aaa;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .main .entry .info span {
+      display: inline-block;
+    }
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+  /* ... (previous styles remain the same) ... */
 
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .main {
+      padding: 40px 30px;
+    }
 
-        .container {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
+    .main h2 {
+      font-size: 28px;
+    }
 
-        .tab-section {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-            border-bottom: 1px dotted #ccc;
-        }
+    .main .section h3 {
+      font-size: 18px;
+    }
 
-        .tab-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background-color: #f0f0f0;
-            border-bottom: 1px dotted #ccc;
-            cursor: pointer;
-        }
+    .sidebar {
+      width: 90%;
+      max-width: 300px;
+      padding: 30px 20px;
+    }
 
-        .tab-content {
-            padding: 20px;
-            height: calc(100% - 51px);
-            overflow-y: auto;
-            background-color: #f5f5f5;
-        }
+    .sidebar.open ~ .sidebar-tab {
+      right: 300px;
+    }
 
-        .yellow-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #ffe100;
-            border-radius: 50%;
-        }
+    .sidebar h1 {
+      font-size: 22px;
+    }
 
-        .black-square {
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-        }
+    .sidebar .intro {
+      font-size: 14px;
+    }
 
-        /* Active tab styles */
-        .tab-section.active {
-            z-index: 5;
-            transform: translateX(0);
-        }
+    .sidebar h2 {
+      font-size: 18px;
+    }
 
-        /* Inactive tab styles */
-        .tab-section.inactive-left {
-            transform: translateX(-80%);
-            z-index: 4;
-        }
+    .sidebar ul {
+      font-size: 14px;
+    }
 
-        .tab-section.inactive-right {
-            transform: translateX(80%);
-            z-index: 3;
-        }
+    .main .entry .title {
+      font-size: 16px;
+    }
 
-        .tab-section.far-right {
-            transform: translateX(90%);
-            z-index: 2;
-        }
+    .main .entry .info {
+      font-size: 14px;
+    }
+  }
 
-        .tab-section.far-left {
-            transform: translateX(-90%);
-            z-index: 1;
-        }
+  @media (max-width: 480px) {
+    .main {
+      padding: 30px 20px;
+    }
 
-        /* Content-specific styles */
-        .profile-container {
-            display: flex;
-            gap: 40px;
-            margin-top: 40px;
-        }
+    .main h2 {
+      font-size: 24px;
+    }
 
-        .profile-left {
-            flex: 1;
-        }
+    .sidebar-tab {
+      padding: 12px 6px;
+      font-size: 14px;
+    }
 
-        .profile-right {
-            flex: 2;
-            font-style: italic;
-            line-height: 1.8;
-        }
+    .main .entry .info {
+      flex-direction: column;
+      gap: 5px;
+    }
 
-        .profile-left h2 {
-            font-size: 48px;
-            font-weight: normal;
-            line-height: 1.2;
-        }
+    .main .entry {
+      padding-left: 15px;
+    }
 
-        .profile-right p {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
+    .main .entry:before {
+      font-size: 16px;
+      left: -5px;
+    }
 
-        .experiences-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 40px;
-        }
+    .sidebar .contact-info p {
+      margin-bottom: 10px;
+    }
 
-        .experiences-table th, .experiences-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px dotted #ccc;
-        }
+    .sidebar .intro p {
+      margin-bottom: 10px;
+    }
 
-        .experiences-title {
-            font-size: 48px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
+    .sidebar .divider {
+      margin: 20px 0;
+    }
+  }
 
-        .skillsets-content {
-            background-color: #ffe100;
-            padding: 20px;
-            height: 100%;
-        }
-
-        .skillsets-title {
-            font-size: 48px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            text-transform: uppercase;
-            margin: 0;
-            font-weight: normal;
-        }
-    </style>
+  @media (hover: none) and (pointer: coarse) {
+    /* Touch device adjustments */
+    .sidebar-tab {
+      padding: 15px 8px;
+      font-size: 16px;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- ABOUT SECTION -->
-        <div class="tab-section" id="about-section">
-            <div class="tab-header">
-                <div class="yellow-dot"></div>
-                <h3 class="section-title">ABOUT</h3>
-                <div></div>
-            </div>
-            <div class="tab-content">
-                <div class="tab-header" style="background-color: transparent;">
-                    <div class="yellow-dot"></div>
-                    <h3 class="section-title">PROFILE</h3>
-                    <div class="black-square"></div>
-                </div>
-                <div class="profile-container">
-                    <div class="profile-left">
-                        <h2>Wildy<br>Riftian</h2>
-                    </div>
-                    <div class="profile-right">
-                        <p>I'm Wildy Riftian, a visual artist and designer from Indonesia.</p>
-                        <p>I spent my younger years in Seoul, South Korea, where I earned a BFA in Visual Communication Design from Kookmin University and gained professional experience across motion design, graphic design, illustration, and photography.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- DETAILS SECTION -->
-        <div class="tab-section" id="details-section">
-            <div class="tab-header">
-                <div></div>
-                <h3 class="section-title">DETAILS</h3>
-                <div class="black-square"></div>
-            </div>
-            <div class="tab-content">
-                <h2 class="experiences-title">Details</h2>
-                <p>Details content would go here.</p>
-            </div>
-        </div>
+  <div class="sidebar" id="sidebar">
+    <h1>Kezia Enginia Sagala</h1>
 
-        <!-- EXPERIENCES SECTION -->
-        <div class="tab-section" id="experiences-section">
-            <div class="tab-header">
-                <div></div>
-                <h3 class="section-title">EXPERIENCES</h3>
-                <div class="black-square"></div>
-            </div>
-            <div class="tab-content">
-                <h2 class="experiences-title">Experiences</h2>
-                <table class="experiences-table">
-                    <thead>
-                        <tr>
-                            <th>YEAR</th>
-                            <th>COMPANY</th>
-                            <th>POSITION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2024/11 - 2025/03</td>
-                            <td>COMOTION 2025<br>BRANDING TEAM</td>
-                            <td>GRAPHIC DESIGNER ART DIRECTOR</td>
-                        </tr>
-                        <tr>
-                            <td>2020/01 - PRESENT</td>
-                            <td>WILDYRIFTIANWORKS.</td>
-                            <td>FREELANCE GRAPHIC DESIGNER</td>
-                        </tr>
-                        <tr>
-                            <td>2023/07 - 2024/01</td>
-                            <td>SWEET ESCAPE PHOTOGRAPHY<br>SEOUL, SOUTH KOREA</td>
-                            <td>FREELANCE PHOTOGRAPHER</td>
-                        </tr>
-                        <tr>
-                            <td>2018/03 - 2024/01</td>
-                            <td>FRAME A TRIP PHOTOGRAPHY<br>SEOUL, SOUTH KOREA</td>
-                            <td>FREELANCE PHOTOGRAPHER</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- SKILLSETS SECTION -->
-        <div class="tab-section" id="skillsets-section">
-            <div class="tab-header" style="background-color: #ffe100;">
-                <div class="yellow-dot"></div>
-                <h3 class="section-title">SKILLSETS</h3>
-                <div class="black-square"></div>
-            </div>
-            <div class="tab-content skillsets-content">
-                <h2 class="skillsets-title">Skillsets</h2>
-                <p>Skills and expertise information would go here.</p>
-            </div>
-        </div>
+    <div class="intro">
+      <p>Hello,</p>
+      <p>People often call me Kea, an enthusiastic graphic designer with a deep love for music, culture, and creative storytelling. My work blends design, branding and digital experience, often inspired by the rhythm and energy of the music industry.</p>
+      <p>With a background in Visual Communication Design, I thrive on creating immersive visuals that connect ideas with emotions. Whether it's building a brand identity, curating digital experience, or experimenting with new media, I'm always pushing creativity beyond expected.</p>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = [
-                document.getElementById('about-section'),
-                document.getElementById('details-section'),
-                document.getElementById('experiences-section'),
-                document.getElementById('skillsets-section')
-            ];
+    <h2>Skillsets</h2>
+    <ul class="skillsets">
+      <li>Graphic Design</li>
+      <li>Branding</li>
+      <li>Campaign Making</li>
+      <li>Editorial</li>
+      <li>Video Editing</li>
+      <li>Social Media Content</li>
+    </ul>
 
-            // Initialize positions
-            function initializePositions() {
-                sections[0].classList.add('active');
-                sections[1].classList.add('inactive-right');
-                sections[2].classList.add('far-right');
-                sections[3].classList.add('far-right');
-            }
+    <div class="divider"></div>
 
-            // Handle tab click
-            function setupTabClicks() {
-                sections.forEach((section, index) => {
-                    const header = section.querySelector('.tab-header');
-                    header.addEventListener('click', () => activateTab(index));
-                });
-            }
+    <h2>Softwares</h2>
+    <ul class="softwares">
+      <li>Adobe Illustrator</li>
+      <li>Adobe Photoshop</li>
+      <li>Adobe After Effects</li>
+      <li>Adobe Premiere Pro</li>
+      <li>Figma</li>
+    </ul>
 
-            // Activate tab by index
-            function activateTab(activeIndex) {
-                sections.forEach((section, index) => {
-                    section.className = 'tab-section'; // Reset classes
+    <div class="divider"></div>
 
-                    if (index === activeIndex) {
-                        section.classList.add('active');
-                    } else if (index < activeIndex) {
-                        if (activeIndex - index === 1) {
-                            section.classList.add('inactive-left');
-                        } else {
-                            section.classList.add('far-left');
-                        }
-                    } else {
-                        if (index - activeIndex === 1) {
-                            section.classList.add('inactive-right');
-                        } else {
-                            section.classList.add('far-right');
-                        }
-                    }
-                });
-            }
+    <div class="contact-info">
+      <p><strong>Email</strong>
+      <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a></p>
 
-            // Initialize
-            initializePositions();
-            setupTabClicks();
-        });
-    </script>
+      <p><strong>Instagram</strong>
+      <a href="https://instagram.com/keziaens">@keziaens</a></p>
+
+      <p><strong>Behance</strong>
+      <a href="https://behance.net/keziaens">behance.net/keziaens</a></p>
+
+      <p><strong>Spotify</strong>
+      Kezia Sagala</p>
+
+      <p><strong>Resume</strong>
+      <a href="#">download here</a></p>
+    </div>
+  </div>
+
+  <div class="sidebar-tab" id="sidebarTab">About</div>
+
+  <div class="main">
+    <div class="section">
+      <h2>About</h2>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+
+      <h3>Design Experience</h3>
+      <div class="entry">
+        <div class="title">Tulusame Studio</div>
+        <div class="info"><span>2022 - 2024</span><span>Graphic Design</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Virtue of Virtual</div>
+        <div class="info"><span>2021 - 2022</span><span>Motion Graphic</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Virtue of Virtual</div>
+        <div class="info"><span>2020 - 2021</span><span>Marketing Design</span></div>
+      </div>
+
+      <h3>Additional Experience</h3>
+      <div class="entry">
+        <div class="title">Student Union - Institut Desain dan Bisnis Surabaya</div>
+        <div class="info"><span>2023 - 2024</span><span>Media Coordinator</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Marketing Partnership - Institut Desain dan Bisnis Surabaya</div>
+        <div class="info"><span>2023 - 2024</span><span>Motion Graphic, Documentation</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Sang Widya Institute</div>
+        <div class="info"><span>2021 - present</span><span>Social Media Content</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">KTFactor</div>
+        <div class="info"><span>2020</span><span>Motion Graphic, Branding</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Achievements</h2>
+      <div class="entry">
+        <div class="title">Bright Breeze Student Experience</div>
+        <div class="info"><span>2024</span><span>1st Winner, Branding Student Competition</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Grand Street of Awareness</div>
+        <div class="info"><span>2023</span><span>2nd Winner, Branding Student Competition</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Visual Space Beyond 2045</div>
+        <div class="info"><span>2023</span><span>3rd Winner, Branding Student Competition</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const sidebarTab = document.getElementById('sidebarTab');
+
+    sidebarTab.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !sidebarTab.contains(e.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+
+    // Initialize skillsets numbering
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillsItems = document.querySelectorAll('.skillsets li');
+      skillsItems.forEach((item, index) => {
+        if (index < 9) {
+          item.style.counterIncrement = 'item';
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
