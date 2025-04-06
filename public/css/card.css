@@ -6,7 +6,7 @@ body {
 :root {
 	--cards: 4;
 	--cardHeight: 87vh;
-	/* --cardTopPadding: 1.5em; */
+	--cardTopPadding: 1.5em;
 	--cardMargin: 4vw;
 }
 
@@ -68,14 +68,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: opacity 0.5s, transform 0.5s;
-	opacity: 1;
-}
-
-.card-body.fade {
-    opacity: 0.3;
-    transform: scale(0.97);
-    transition: opacity 0.5s, transform 0.5s;
+	transition: all 0.5s;
 }
 
 h2 {
