@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kezia Sagala - Portfolio</title>
   <style>
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url("/Fonts/myriad-pro/MYRIADPRO.REGULAR.otf") format("opentype");
+  font-display: swap; /* Teks akan ditampilkan dulu dengan fallback font */
+}
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url("/Fonts/myriad-pro/MYRIADPRO.REGULAR.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url("/Fonts/myriad-pro/MYRIADPRO.BOLD.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url("/Fonts/myriad-pro/MYRIADPRO.SEMIBOLD.otf") format("opentype");
+  font-weight: 600; /* 600 adalah nilai untuk semi-bold */
+  font-style: normal;
+}
     * {
       margin: 0;
       padding: 0;
@@ -13,57 +38,52 @@
 
     body {
       font-family: 'Helvetica Neue', sans-serif;
+      font-family: 'Myriad Pro', sans-serif;
       display: flex;
       min-height: 100vh;
       color: #fff;
       position: relative;
       overflow-x: hidden;
-      background-color: #1a1a1a;
+      background-color: #ffff;
     }
 
-    /* Sidebar - Updated to fill the entire width */
+    /* Sidebar - Updated to match exact content */
     .sidebar {
       background-color: #111;
       color: #fff;
-      width: 100%; /* Now covers full width */
+      width: 80%;
+      max-width: 400px;
       position: fixed;
-      right: -100%; /* Start offscreen on the right */
+      right: -80%;
       top: 0;
       height: 100vh;
-      padding: 10px;
+      padding: 40px 30px;
       transition: right 0.3s ease;
       z-index: 1000;
       overflow-y: auto;
       scrollbar-width: thin;
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center content horizontally */
-    }
-
-    .sidebar-content {
-      width: 100%;
-      max-width: 500px; /* Set a max-width for better readability */
+      font-family: 'Myriad Pro', 'Helvetica Neue', Arial, sans-serif;
     }
 
     .sidebar.open {
-      right: 0; /* Slide in from the right */
+      right: 0;
     }
 
     .sidebar h1 {
-      font-size: 24px;
+      font-size: 36px;
       margin-bottom: 20px;
+      font-style: Normal;
     }
 
     .sidebar .intro {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      width: 100%; /* Take full width of parent */
-    }
+  text-align: center; /* Ini yang akan membuat teks rata tengah */
+  margin-bottom: 30px;
+}
 
-    .sidebar .intro p {
-      margin-bottom: 15px;
-    }
+.sidebar .intro p {
+  margin-bottom: 15px;
+  font-family: 'Myriad-PBro', sans-serif;
+}
 
     .sidebar h2 {
       font-size: 20px;
@@ -72,56 +92,60 @@
       color: #f78da7;
       text-transform: uppercase;
       letter-spacing: 1px;
-      width: 100%;
     }
 
     .sidebar ul {
       list-style: none;
       font-size: 16px;
       margin-bottom: 30px;
-      width: 100%; /* Take full width of parent */
     }
 
     .sidebar ul.skillsets li {
       margin-bottom: 10px;
       position: relative;
       padding-left: 30px;
+      color: #f78da7;
     }
 
-    .sidebar ul.skillsets li:before {
+    /* .sidebar ul.skillsets li:before {
       content: "0" counter(item);
       counter-increment: item;
       position: absolute;
       left: 0;
       color: #f78da7;
       font-weight: bold;
-    }
+    } */
 
     .sidebar ul.softwares li {
       margin-bottom: 10px;
       position: relative;
       padding-left: 20px;
+      color: #f78da7;
     }
 
-    .sidebar ul.softwares li:before {
+    /* .sidebar ul.softwares li:before {
       content: "-";
       position: absolute;
       left: 0;
       color: #f78da7;
-    }
+    } */
 
     .sidebar .contact-info {
-      font-size: 16px;
-      width: 100%; /* Take full width of parent */
+      font-size: 30px;
     }
 
     .sidebar .contact-info p {
       margin-bottom: 15px;
+      color: #f78da7;
+    }
+
+    .sidebar .contact-info a {
+      color: #f78da7;
     }
 
     .sidebar .contact-info strong {
       display: block;
-      color: #f78da7;
+      color: #FFFFFF;
       margin-bottom: 5px;
       font-size: 14px;
     }
@@ -140,13 +164,40 @@
       height: 1px;
       background-color: #333;
       margin: 25px 0;
-      width: 100%; /* Take full width of parent */
     }
 
-    /* Tab to open sidebar - Will slide to left edge when open */
+    .profile-image-container {
+    width: 350px;
+    height: 100px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+    /* Tab to open sidebar - Fixed positioning */
     .sidebar-tab {
       position: fixed;
-      right: 0; /* Start at right edge */
+      right: 0;
       top: 50%;
       transform: translateY(-50%);
       background-color: #111;
@@ -159,18 +210,17 @@
       cursor: pointer;
       z-index: 1001;
       border-radius: 8px 0 0 8px;
-      transition: right 0.3s ease, left 0.3s ease; /* Transition both right and left */
+      transition: right 0.3s ease;
     }
 
     .sidebar.open ~ .sidebar-tab {
-      right: auto; /* Remove right positioning */
-      left: 0; /* Move to left edge of window */
+      right: 400px;
     }
 
     /* Main content */
     .main {
       flex-grow: 1;
-      background-color: #1a1a1a;
+      /* background-color: #FFFFFF; */
       padding: 60px;
       width: 100%;
       max-width: 1200px;
@@ -179,7 +229,7 @@
 
     .main h2 {
       font-size: 32px;
-      color: #f78da7;
+      color: #111;
       margin-bottom: 30px;
       font-weight: 600;
       text-transform: uppercase;
@@ -191,7 +241,7 @@
     }
 
     .main .section h3 {
-      color: #fff;
+      color: #f78da7;
       margin-bottom: 20px;
       font-size: 20px;
       font-weight: 500;
@@ -209,7 +259,7 @@
       content: "•";
       position: absolute;
       left: 0;
-      color: #f78da7;
+      color: #111;
       font-size: 20px;
     }
 
@@ -217,225 +267,254 @@
       font-weight: 600;
       font-size: 18px;
       margin-bottom: 5px;
+      color: #f78da7;
+
     }
 
     .main .entry .info {
       font-size: 16px;
-      color: #aaa;
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
+      color: #f78da7;
+
     }
 
     .main .entry .info span {
       display: inline-block;
     }
+    <style>
+  /* ... (previous styles remain the same) ... */
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .main {
-        padding: 40px 30px;
-      }
-
-      .main h2 {
-        font-size: 28px;
-      }
-
-      .main .section h3 {
-        font-size: 18px;
-      }
-
-      .sidebar {
-        padding: 30px 20px;
-      }
-
-      .sidebar h1 {
-        font-size: 22px;
-      }
-
-      .sidebar .intro {
-        font-size: 14px;
-      }
-
-      .sidebar h2 {
-        font-size: 18px;
-      }
-
-      .sidebar ul {
-        font-size: 14px;
-      }
-
-      .main .entry .title {
-        font-size: 16px;
-      }
-
-      .main .entry .info {
-        font-size: 14px;
-      }
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .main {
+      padding: 40px 30px;
     }
 
-    @media (max-width: 480px) {
-      .main {
-        padding: 30px 20px;
-      }
-
-      .main h2 {
-        font-size: 24px;
-      }
-
-      .sidebar-tab {
-        padding: 12px 6px;
-        font-size: 14px;
-      }
-
-      .main .entry .info {
-        flex-direction: column;
-        gap: 5px;
-      }
-
-      .main .entry {
-        padding-left: 15px;
-      }
-
-      .main .entry:before {
-        font-size: 16px;
-        left: -5px;
-      }
-
-      .sidebar .contact-info p {
-        margin-bottom: 10px;
-      }
-
-      .sidebar .intro p {
-        margin-bottom: 10px;
-      }
-
-      .sidebar .divider {
-        margin: 20px 0;
-      }
+    .main h2 {
+      font-size: 28px;
     }
 
-    @media (hover: none) and (pointer: coarse) {
-      /* Touch device adjustments */
-      .sidebar-tab {
-        padding: 15px 8px;
-        font-size: 16px;
-      }
+    .main .section h3 {
+      font-size: 18px;
     }
-  </style>
+
+    .sidebar {
+      width: 90%;
+      max-width: 300px;
+      padding: 30px 20px;
+    }
+
+    .sidebar.open ~ .sidebar-tab {
+      right: 300px;
+    }
+
+    .sidebar h1 {
+      font-size: 22px;
+    }
+
+    .sidebar .intro {
+      font-size: 14px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+    }
+
+    .sidebar ul {
+      font-size: 14px;
+    }
+
+    .main .entry .title {
+      font-size: 16px;
+    }
+
+    .main .entry .info {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main {
+      padding: 30px 20px;
+    }
+
+    .main h2 {
+      font-size: 24px;
+    }
+
+    .sidebar-tab {
+      padding: 12px 6px;
+      font-size: 14px;
+    }
+
+    .main .entry .info {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .main .entry {
+      padding-left: 15px;
+    }
+
+    .main .entry:before {
+      font-size: 16px;
+      left: -5px;
+    }
+
+    /* .sidebar .contact-info p {
+      margin-bottom: 10px;
+    } */
+
+    .sidebar .intro p {
+      margin-bottom: 10px;
+    }
+
+    .sidebar .divider {
+      margin: 20px 0;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    /* Touch device adjustments */
+    .sidebar-tab {
+      padding: 15px 8px;
+      font-size: 16px;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-content">
-      <h1>Kezia Enginia Sagala</h1>
+    <div class="sidebar" id="sidebar">
+        <h1>Kezia Sagala</h1>
+        <div class="divider"></div>
 
-      <div class="intro">
-        <p>Hello,</p>
-        <p>People often call me Kea, an enthusiastic graphic designer with a deep love for music, culture, and creative storytelling. My work blends design, branding and digital experience, often inspired by the rhythm and energy of the music industry.</p>
-        <p>With a background in Visual Communication Design, I thrive on creating immersive visuals that connect ideas with emotions. Whether it's building a brand identity, curating digital experience, or experimenting with new media, I'm always pushing creativity beyond expected.</p>
-      </div>
+        <div class="profile-image-container">
+            <img src="{{ asset('images/Keziapic.png') }}" alt="Kezia Ens" class="profile-image">
+        </div>
 
-      <h2>Skillsets</h2>
-      <ul class="skillsets">
-        <li>Graphic Design</li>
-        <li>Branding</li>
-        <li>Campaign Making</li>
-        <li>Editorial</li>
-        <li>Video Editing</li>
-        <li>Social Media Content</li>
-      </ul>
+        <div class="divider"></div>
 
-      <div class="divider"></div>
 
-      <h2>Softwares</h2>
-      <ul class="softwares">
-        <li>Adobe Illustrator</li>
-        <li>Adobe Photoshop</li>
-        <li>Adobe After Effects</li>
-        <li>Adobe Premiere Pro</li>
-        <li>Figma</li>
-      </ul>
+        <div class="intro">
+          <p>Hello,</p>
+          <p>I'm Kezia Euginia Sagala. People often call me Kee,</p>
+          <p>I'm so enthusiastic graphic designer. with a deep love for music,</p>
+          <p>culture, and creative storytelling. My works blends design, branding and digital</p>
+          <p>experiences, often inspired by the rhythm and energy of the music industry.</p>
+          <br>
+          <p>With a background in Visual Communication Design,</p>
+          <p>I thrive on creating immersive visuals that connect ideas with emotions,</p>
+          <p>whether fit, building a brand identity, creating digital experiences, or</p>
+          <p>experimenting with new media, I'm always pushing creativity beyond expanded.</p>
+        </div>
 
-      <div class="divider"></div>
+        <div class="divider"></div>
 
-      <div class="contact-info">
-        <p><strong>Email</strong>
-        <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a></p>
+        <h1>Skillsets</h1>
+        <ul class="skillsets">
+          <li>01 Graphic Design</li>
+          <li>02 Branding</li>
+          <li>03 Campaign Making</li>
+          <li>04 Editions</li>
+          <li>05 Video Editing</li>
+          <li>06 Social Media Content</li>
+        </ul>
 
-        <p><strong>Instagram</strong>
-        <a href="https://instagram.com/keziaens">@keziaens</a></p>
+        <div class="divider"></div>
 
-        <p><strong>Behance</strong>
-        <a href="https://behance.net/keziaens">behance.net/keziaens</a></p>
+        <h1>Softwares</h1>
+        <ul class="softwares">
+          <li>Adobe After Effect</li>
+          <li>Adobe Illustrator</li>
+          <li>Adobe Photoshop</li>
+          <li>Adobe Premiere Pro</li>
+          <li>Adobe InDesign</li>
+          <li>Figma</li>
+        </ul>
 
-        <p><strong>Spotify</strong>
-        Kezia Sagala</p>
+        <div class="divider"></div>
 
-        <p><strong>Resume</strong>
-        <a href="#">download here</a></p>
-      </div>
+        <div class="contact-info">
+         <p><strong>Email</strong>
+          keziaens@gmail.com</p>
+
+          <p><strong>Instagram</strong>
+          <a href="https://instagram.com/keziaens">@keziaens</a></p>
+
+          <p><strong>Behance</strong>
+          <a href="https://behance.net/keziaens">behance.net/keziaens</a></p>
+
+          <p><strong>Spotify</strong>
+          Kezia Sagala</p>
+
+          <p><strong>Resume</strong>
+          <a href="#">download here</a></p>
+        </div>
     </div>
-  </div>
 
   <div class="sidebar-tab" id="sidebarTab">About</div>
 
   <div class="main">
     <div class="section">
-        <h2>About</h2>
+      <h2>About</h2>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+
+      <h3>Design Experience</h3>
+      <div class="entry">
+        <div class="title">Tulusame Studio</div>
+        <div class="info"><span>2022 - 2024</span><span>Graphic Design</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Virtue of Virtual</div>
+        <div class="info"><span>2021 - 2022</span><span>Motion Graphic</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Virtue of Virtual</div>
+        <div class="info"><span>2020 - 2021</span><span>Marketing Design</span></div>
       </div>
 
-      <div class="section">
-        <h2>Experience</h2>
-
-        <h3>Design Experience</h3>
-        <div class="entry">
-          <div class="title">Tulusame Studio</div>
-          <div class="info"><span>2022 - 2024</span><span>Graphic Design</span></div>
-        </div>
-        <div class="entry">
-          <div class="title">Virtue of Virtual</div>
-          <div class="info"><span>2021 - 2022</span><span>Motion Graphic</span></div>
-        </div>
-        <div class="entry">
-          <div class="title">Virtue of Virtual</div>
-          <div class="info"><span>2020 - 2021</span><span>Marketing Design</span></div>
-        </div>
-
-        <h3>Additional Experience</h3>
-        <div class="entry">
-          <div class="title">Student Union - Institut Desain dan Bisnis Surabaya</div>
-          <div class="info"><span>2023 - 2024</span><span>Media Coordinator</span></div>
-        </div>
-        <div class="entry">
-          <div class="title">Marketing Partnership - Institut Desain dan Bisnis Surabaya</div>
-          <div class="info"><span>2023 - 2024</span><span>Motion Graphic, Documentation</span></div>
-        </div>
-        <div class="entry">
-          <div class="title">Sang Widya Institute</div>
-          <div class="info"><span>2021 - present</span><span>Social Media Content</span></div>
-        </div>
-        <div class="entry">
-          <div class="title">KTFactor</div>
-          <div class="info"><span>2020</span><span>Motion Graphic, Branding</span></div>
-        </div>
+      <h3>Additional Experience</h3>
+      <div class="entry">
+        <div class="title">Student Union - Institut Desain dan Bisnis Surabaya</div>
+        <div class="info"><span>2023 - 2024</span><span>Media Coordinator</span></div>
       </div>
-
-      <div class="section">
-        <h2>Achievements</h2>
-        <div class="entry">
-          <div class="title">Bright Breeze Student Experience</div>
-          <div class="info"><span>2024</span><span>1st Winner, Branding Student Competition</span></div>
-        </div>
-        <div class="entry">
-          <div class="title">Grand Street of Awareness</div>
-          <div class="info"><span>2023</span><span>2nd Winner, Branding Student Competition</span></div>
-        </div>
-        <div class="entry">
-          <div class="title">Visual Space Beyond 2045</div>
-          <div class="info"><span>2023</span><span>3rd Winner, Branding Student Competition</span></div>
-        </div>
+      <div class="entry">
+        <div class="title">Marketing Partnership - Institut Desain dan Bisnis Surabaya</div>
+        <div class="info"><span>2023 - 2024</span><span>Motion Graphic, Documentation</span></div>
       </div>
+      <div class="entry">
+        <div class="title">Sang Widya Institute</div>
+        <div class="info"><span>2021 - present</span><span>Social Media Content</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">KTFactor</div>
+        <div class="info"><span>2020</span><span>Motion Graphic, Branding</span></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+
+    <div class="section">
+      <h3>Achievements</h3>
+      <div class="entry">
+        <div class="title">Bright Breeze Student Experience</div>
+        <div class="info"><span>2024</span><span>1st Winner, Branding Student Competition</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Grand Street of Awareness</div>
+        <div class="info"><span>2023</span><span>2nd Winner, Branding Student Competition</span></div>
+      </div>
+      <div class="entry">
+        <div class="title">Visual Space Beyond 2045</div>
+        <div class="info"><span>2023</span><span>3rd Winner, Branding Student Competition</span></div>
+      </div>
+    </div>
   </div>
 
   <script>
