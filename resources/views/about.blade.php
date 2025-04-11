@@ -21,25 +21,32 @@
       background-color: #1a1a1a;
     }
 
-    /* Sidebar - Updated to match exact content */
+    /* Sidebar - Updated to fill the entire width */
     .sidebar {
       background-color: #111;
       color: #fff;
-      width: 80%;
-      max-width: 400px;
+      width: 100%; /* Now covers full width */
       position: fixed;
-      right: -80%;
+      right: -100%; /* Start offscreen on the right */
       top: 0;
       height: 100vh;
-      padding: 40px 30px;
+      padding: 10px;
       transition: right 0.3s ease;
       z-index: 1000;
       overflow-y: auto;
       scrollbar-width: thin;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+    }
+
+    .sidebar-content {
+      width: 100%;
+      max-width: 500px; /* Set a max-width for better readability */
     }
 
     .sidebar.open {
-      right: 0;
+      right: 0; /* Slide in from the right */
     }
 
     .sidebar h1 {
@@ -51,6 +58,7 @@
       font-size: 16px;
       line-height: 1.6;
       margin-bottom: 30px;
+      width: 100%; /* Take full width of parent */
     }
 
     .sidebar .intro p {
@@ -64,12 +72,14 @@
       color: #f78da7;
       text-transform: uppercase;
       letter-spacing: 1px;
+      width: 100%;
     }
 
     .sidebar ul {
       list-style: none;
       font-size: 16px;
       margin-bottom: 30px;
+      width: 100%; /* Take full width of parent */
     }
 
     .sidebar ul.skillsets li {
@@ -102,6 +112,7 @@
 
     .sidebar .contact-info {
       font-size: 16px;
+      width: 100%; /* Take full width of parent */
     }
 
     .sidebar .contact-info p {
@@ -129,12 +140,13 @@
       height: 1px;
       background-color: #333;
       margin: 25px 0;
+      width: 100%; /* Take full width of parent */
     }
 
-    /* Tab to open sidebar - Fixed positioning */
+    /* Tab to open sidebar - Will slide to left edge when open */
     .sidebar-tab {
       position: fixed;
-      right: 0;
+      right: 0; /* Start at right edge */
       top: 50%;
       transform: translateY(-50%);
       background-color: #111;
@@ -147,11 +159,12 @@
       cursor: pointer;
       z-index: 1001;
       border-radius: 8px 0 0 8px;
-      transition: right 0.3s ease;
+      transition: right 0.3s ease, left 0.3s ease; /* Transition both right and left */
     }
 
     .sidebar.open ~ .sidebar-tab {
-      right: 400px;
+      right: auto; /* Remove right positioning */
+      left: 0; /* Move to left edge of window */
     }
 
     /* Main content */
@@ -217,157 +230,151 @@
     .main .entry .info span {
       display: inline-block;
     }
-    <style>
-  /* ... (previous styles remain the same) ... */
 
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .main {
-      padding: 40px 30px;
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .main {
+        padding: 40px 30px;
+      }
+
+      .main h2 {
+        font-size: 28px;
+      }
+
+      .main .section h3 {
+        font-size: 18px;
+      }
+
+      .sidebar {
+        padding: 30px 20px;
+      }
+
+      .sidebar h1 {
+        font-size: 22px;
+      }
+
+      .sidebar .intro {
+        font-size: 14px;
+      }
+
+      .sidebar h2 {
+        font-size: 18px;
+      }
+
+      .sidebar ul {
+        font-size: 14px;
+      }
+
+      .main .entry .title {
+        font-size: 16px;
+      }
+
+      .main .entry .info {
+        font-size: 14px;
+      }
     }
 
-    .main h2 {
-      font-size: 28px;
+    @media (max-width: 480px) {
+      .main {
+        padding: 30px 20px;
+      }
+
+      .main h2 {
+        font-size: 24px;
+      }
+
+      .sidebar-tab {
+        padding: 12px 6px;
+        font-size: 14px;
+      }
+
+      .main .entry .info {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .main .entry {
+        padding-left: 15px;
+      }
+
+      .main .entry:before {
+        font-size: 16px;
+        left: -5px;
+      }
+
+      .sidebar .contact-info p {
+        margin-bottom: 10px;
+      }
+
+      .sidebar .intro p {
+        margin-bottom: 10px;
+      }
+
+      .sidebar .divider {
+        margin: 20px 0;
+      }
     }
 
-    .main .section h3 {
-      font-size: 18px;
+    @media (hover: none) and (pointer: coarse) {
+      /* Touch device adjustments */
+      .sidebar-tab {
+        padding: 15px 8px;
+        font-size: 16px;
+      }
     }
-
-    .sidebar {
-      width: 90%;
-      max-width: 300px;
-      padding: 30px 20px;
-    }
-
-    .sidebar.open ~ .sidebar-tab {
-      right: 300px;
-    }
-
-    .sidebar h1 {
-      font-size: 22px;
-    }
-
-    .sidebar .intro {
-      font-size: 14px;
-    }
-
-    .sidebar h2 {
-      font-size: 18px;
-    }
-
-    .sidebar ul {
-      font-size: 14px;
-    }
-
-    .main .entry .title {
-      font-size: 16px;
-    }
-
-    .main .entry .info {
-      font-size: 14px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .main {
-      padding: 30px 20px;
-    }
-
-    .main h2 {
-      font-size: 24px;
-    }
-
-    .sidebar-tab {
-      padding: 12px 6px;
-      font-size: 14px;
-    }
-
-    .main .entry .info {
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .main .entry {
-      padding-left: 15px;
-    }
-
-    .main .entry:before {
-      font-size: 16px;
-      left: -5px;
-    }
-
-    .sidebar .contact-info p {
-      margin-bottom: 10px;
-    }
-
-    .sidebar .intro p {
-      margin-bottom: 10px;
-    }
-
-    .sidebar .divider {
-      margin: 20px 0;
-    }
-  }
-
-  @media (hover: none) and (pointer: coarse) {
-    /* Touch device adjustments */
-    .sidebar-tab {
-      padding: 15px 8px;
-      font-size: 16px;
-    }
-  }
-</style>
+  </style>
 </head>
 <body>
 
   <div class="sidebar" id="sidebar">
-    <h1>Kezia Enginia Sagala</h1>
+    <div class="sidebar-content">
+      <h1>Kezia Enginia Sagala</h1>
 
-    <div class="intro">
-      <p>Hello,</p>
-      <p>People often call me Kea, an enthusiastic graphic designer with a deep love for music, culture, and creative storytelling. My work blends design, branding and digital experience, often inspired by the rhythm and energy of the music industry.</p>
-      <p>With a background in Visual Communication Design, I thrive on creating immersive visuals that connect ideas with emotions. Whether it's building a brand identity, curating digital experience, or experimenting with new media, I'm always pushing creativity beyond expected.</p>
-    </div>
+      <div class="intro">
+        <p>Hello,</p>
+        <p>People often call me Kea, an enthusiastic graphic designer with a deep love for music, culture, and creative storytelling. My work blends design, branding and digital experience, often inspired by the rhythm and energy of the music industry.</p>
+        <p>With a background in Visual Communication Design, I thrive on creating immersive visuals that connect ideas with emotions. Whether it's building a brand identity, curating digital experience, or experimenting with new media, I'm always pushing creativity beyond expected.</p>
+      </div>
 
-    <h2>Skillsets</h2>
-    <ul class="skillsets">
-      <li>Graphic Design</li>
-      <li>Branding</li>
-      <li>Campaign Making</li>
-      <li>Editorial</li>
-      <li>Video Editing</li>
-      <li>Social Media Content</li>
-    </ul>
+      <h2>Skillsets</h2>
+      <ul class="skillsets">
+        <li>Graphic Design</li>
+        <li>Branding</li>
+        <li>Campaign Making</li>
+        <li>Editorial</li>
+        <li>Video Editing</li>
+        <li>Social Media Content</li>
+      </ul>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <h2>Softwares</h2>
-    <ul class="softwares">
-      <li>Adobe Illustrator</li>
-      <li>Adobe Photoshop</li>
-      <li>Adobe After Effects</li>
-      <li>Adobe Premiere Pro</li>
-      <li>Figma</li>
-    </ul>
+      <h2>Softwares</h2>
+      <ul class="softwares">
+        <li>Adobe Illustrator</li>
+        <li>Adobe Photoshop</li>
+        <li>Adobe After Effects</li>
+        <li>Adobe Premiere Pro</li>
+        <li>Figma</li>
+      </ul>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="contact-info">
-      <p><strong>Email</strong>
-      <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a></p>
+      <div class="contact-info">
+        <p><strong>Email</strong>
+        <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a></p>
 
-      <p><strong>Instagram</strong>
-      <a href="https://instagram.com/keziaens">@keziaens</a></p>
+        <p><strong>Instagram</strong>
+        <a href="https://instagram.com/keziaens">@keziaens</a></p>
 
-      <p><strong>Behance</strong>
-      <a href="https://behance.net/keziaens">behance.net/keziaens</a></p>
+        <p><strong>Behance</strong>
+        <a href="https://behance.net/keziaens">behance.net/keziaens</a></p>
 
-      <p><strong>Spotify</strong>
-      Kezia Sagala</p>
+        <p><strong>Spotify</strong>
+        Kezia Sagala</p>
 
-      <p><strong>Resume</strong>
-      <a href="#">download here</a></p>
+        <p><strong>Resume</strong>
+        <a href="#">download here</a></p>
+      </div>
     </div>
   </div>
 
@@ -375,60 +382,60 @@
 
   <div class="main">
     <div class="section">
-      <h2>About</h2>
-    </div>
-
-    <div class="section">
-      <h2>Experience</h2>
-
-      <h3>Design Experience</h3>
-      <div class="entry">
-        <div class="title">Tulusame Studio</div>
-        <div class="info"><span>2022 - 2024</span><span>Graphic Design</span></div>
-      </div>
-      <div class="entry">
-        <div class="title">Virtue of Virtual</div>
-        <div class="info"><span>2021 - 2022</span><span>Motion Graphic</span></div>
-      </div>
-      <div class="entry">
-        <div class="title">Virtue of Virtual</div>
-        <div class="info"><span>2020 - 2021</span><span>Marketing Design</span></div>
+        <h2>About</h2>
       </div>
 
-      <h3>Additional Experience</h3>
-      <div class="entry">
-        <div class="title">Student Union - Institut Desain dan Bisnis Surabaya</div>
-        <div class="info"><span>2023 - 2024</span><span>Media Coordinator</span></div>
-      </div>
-      <div class="entry">
-        <div class="title">Marketing Partnership - Institut Desain dan Bisnis Surabaya</div>
-        <div class="info"><span>2023 - 2024</span><span>Motion Graphic, Documentation</span></div>
-      </div>
-      <div class="entry">
-        <div class="title">Sang Widya Institute</div>
-        <div class="info"><span>2021 - present</span><span>Social Media Content</span></div>
-      </div>
-      <div class="entry">
-        <div class="title">KTFactor</div>
-        <div class="info"><span>2020</span><span>Motion Graphic, Branding</span></div>
-      </div>
-    </div>
+      <div class="section">
+        <h2>Experience</h2>
 
-    <div class="section">
-      <h2>Achievements</h2>
-      <div class="entry">
-        <div class="title">Bright Breeze Student Experience</div>
-        <div class="info"><span>2024</span><span>1st Winner, Branding Student Competition</span></div>
+        <h3>Design Experience</h3>
+        <div class="entry">
+          <div class="title">Tulusame Studio</div>
+          <div class="info"><span>2022 - 2024</span><span>Graphic Design</span></div>
+        </div>
+        <div class="entry">
+          <div class="title">Virtue of Virtual</div>
+          <div class="info"><span>2021 - 2022</span><span>Motion Graphic</span></div>
+        </div>
+        <div class="entry">
+          <div class="title">Virtue of Virtual</div>
+          <div class="info"><span>2020 - 2021</span><span>Marketing Design</span></div>
+        </div>
+
+        <h3>Additional Experience</h3>
+        <div class="entry">
+          <div class="title">Student Union - Institut Desain dan Bisnis Surabaya</div>
+          <div class="info"><span>2023 - 2024</span><span>Media Coordinator</span></div>
+        </div>
+        <div class="entry">
+          <div class="title">Marketing Partnership - Institut Desain dan Bisnis Surabaya</div>
+          <div class="info"><span>2023 - 2024</span><span>Motion Graphic, Documentation</span></div>
+        </div>
+        <div class="entry">
+          <div class="title">Sang Widya Institute</div>
+          <div class="info"><span>2021 - present</span><span>Social Media Content</span></div>
+        </div>
+        <div class="entry">
+          <div class="title">KTFactor</div>
+          <div class="info"><span>2020</span><span>Motion Graphic, Branding</span></div>
+        </div>
       </div>
-      <div class="entry">
-        <div class="title">Grand Street of Awareness</div>
-        <div class="info"><span>2023</span><span>2nd Winner, Branding Student Competition</span></div>
+
+      <div class="section">
+        <h2>Achievements</h2>
+        <div class="entry">
+          <div class="title">Bright Breeze Student Experience</div>
+          <div class="info"><span>2024</span><span>1st Winner, Branding Student Competition</span></div>
+        </div>
+        <div class="entry">
+          <div class="title">Grand Street of Awareness</div>
+          <div class="info"><span>2023</span><span>2nd Winner, Branding Student Competition</span></div>
+        </div>
+        <div class="entry">
+          <div class="title">Visual Space Beyond 2045</div>
+          <div class="info"><span>2023</span><span>3rd Winner, Branding Student Competition</span></div>
+        </div>
       </div>
-      <div class="entry">
-        <div class="title">Visual Space Beyond 2045</div>
-        <div class="info"><span>2023</span><span>3rd Winner, Branding Student Competition</span></div>
-      </div>
-    </div>
   </div>
 
   <script>
