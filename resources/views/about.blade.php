@@ -161,11 +161,21 @@
     }
 
     .divider {
-      height: 1px;
-      background-color: #333;
-      margin: 25px 0;
-    }
+  position: relative;
+  height: 1px;
+  margin: 25px 0;
+  background-color: transparent;
+}
 
+.divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  border-top: 1px dotted #333;
+}
     .profile-image-container {
     width: 350px;
     height: 100px;
@@ -373,6 +383,11 @@
 
     .sidebar .divider {
       margin: 20px 0;
+      height: 2px;
+  background: transparent;
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 5px 5px; /* Atur jarak titik-titik */
+  background-position: 0 0;
     }
   }
 
