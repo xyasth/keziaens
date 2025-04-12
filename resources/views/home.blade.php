@@ -2,7 +2,7 @@
 
 @section('content')
 
-@php
+{{-- @php
 $projects = [
     [
         'title' => 'Kollabrasa',
@@ -19,7 +19,7 @@ $projects = [
         'link' => '/collctions/collection-detail2', // → route ke halaman detail
     ],
 ];
-@endphp
+@endphp --}}
 
 
 
@@ -98,25 +98,26 @@ $projects = [
     </div>
 
     <!-- Tracklist Section -->
-    <section id="tracklist" class="bg-black text-white px-4 sm:px-8 lg:px-16 relative overflow-hidden py-20">
-        <div class="max-w-2xl relative pl-8 md:pl-10 lg:pl-64 mb-12">
-            <p class="text-white text-5xl">Tracklist</p>
-        </div>
+   <!-- Tracklist Section -->
+<section id="tracklist" class="bg-black text-white px-4 sm:px-8 lg:px-16 relative overflow-hidden py-20">
+    <div class="max-w-2xl relative pl-8 md:pl-10 lg:pl-64 mb-12">
+        <p class="text-white text-5xl">Tracklist</p>
+    </div>
 
-        <div class="container relative w-full flex items-center justify-center">
-            <div class="card-stack w-full max-w-4xl relative pb-80">
-                <!-- Increased padding-bottom to accommodate all cards -->
-                <!-- Card 1 -->
-                <div class="card group" id="card1">
-                    <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Artist Pick" />
-                    <div class="card-overlay">
-                        <h2>Artist Pick</h2>
-                        <div class="tap-to-view">TAP TO VIEW</div>
-                        <div class="subtitle">Instruction to own design</div>
-                        <ul>
-                            <div class="grid gap-6">
-                                @foreach ($projects as $project)
+    <div class="container relative w-full flex items-center justify-center">
+        <div class="card-stack w-full max-w-4xl relative pb-80">
+            <!-- Card 1 -->
+            <div class="card group" id="card1">
+                <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
+                    alt="Artist Pick" />
+                <div class="card-overlay">
+                    <h2>Artist Pick</h2>
+                    <div class="tap-to-view">TAP TO VIEW</div>
+                    <div class="subtitle">Instruction to own design</div>
+                    <ul>
+                        <div class="grid gap-6">
+                            @foreach ($webProjects  as $project)
+                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
                                     <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
                                         <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
                                             class="w-48 rounded-md shadow-md" />
@@ -131,60 +132,81 @@ $projects = [
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
-                        </ul>
-                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </ul>
                 </div>
+            </div>
 
-                <!-- Card 2 -->
-                <div class="card group" id="card2">
-                    <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Popular Releases" />
-                    <div class="card-overlay">
-                        <h2>Popular Releases</h2>
-                        <div class="tap-to-view">TAP TO VIEW</div>
-                        <div class="subtitle">Top centralized</div>
-                        <ul>
-                            <li>Featuring Kezia</li>
-                            <li>2013-12-29 09:59</li>
-                            <li>Summer Vibes Collection</li>
-                            <li>Urban Legends Series</li>
-                            <li>Winter Wonderland Pack</li>
-                            <li>Abstract Dreams Edition</li>
-                            <li>Minimalist Moments</li>
-                            <li>Retro Revival Set</li>
-                            <li>Futuristic Concepts</li>
-                            <li>Nature's Palette</li>
-                        </ul>
-                    </div>
+            <!-- Card 2 -->
+            <div class="card group" id="card2">
+                <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
+                    alt="Popular Releases" />
+                <div class="card-overlay">
+                    <h2>Popular Releases</h2>
+                    <div class="tap-to-view">TAP TO VIEW</div>
+                    <div class="subtitle">Top centralized</div>
+                    <ul>
+                        <div class="grid gap-6">
+                            @foreach ($webProjects  as $project)
+                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                    <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                            class="w-48 rounded-md shadow-md" />
+                                        <div>
+                                            <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
+                                            <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                            <div class="flex flex-wrap gap-2">
+                                                @foreach ($project['tags'] as $tag)
+                                                    <span
+                                                        class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </ul>
                 </div>
+            </div>
 
-                <!-- Card 3 -->
-                <div class="card group" id="card3">
-                    <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Featured Collections" />
-                    <div class="card-overlay">
-                        <h2>Featured Collections</h2>
-                        <div class="tap-to-view">TAP TO VIEW</div>
-                        <div class="subtitle">Curated for you</div>
-                        <ul>
-                            <li>Best of 2023</li>
-                            <li>Editor's Choice</li>
-                            <li>Emerging Talents</li>
-                            <li>Classic Masterpieces</li>
-                            <li>Digital Innovations</li>
-                            <li>Mixed Media Wonders</li>
-                            <li>Street Art Highlights</li>
-                            <li>Concept Art Gallery</li>
-                            <li>Portrait Specialists</li>
-                            <li>Landscape Legends</li>
-                        </ul>
-                    </div>
+            <!-- Card 3 -->
+            <div class="card group" id="card3">
+                <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
+                    alt="Featured Collections" />
+                <div class="card-overlay">
+                    <h2>Featured Collections</h2>
+                    <div class="tap-to-view">TAP TO VIEW</div>
+                    <div class="subtitle">Curated for you</div>
+                    <ul>
+                        <div class="grid gap-6">
+                            @foreach ($webProjects  as $project)
+                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                    <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                            class="w-48 rounded-md shadow-md" />
+                                        <div>
+                                            <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
+                                            <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                            <div class="flex flex-wrap gap-2">
+                                                @foreach ($project['tags'] as $tag)
+                                                    <span
+                                                        class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Section 4 with Full-Width Horizontal Background -->
     <section id="section-four" class="min-h-screen relative overflow-hidden">
@@ -358,6 +380,13 @@ $projects = [
             // Set the card stack container to fit the tallest card
             cardStack.style.height = `${maxHeight}px`;
         });
+
+        document.querySelectorAll('.card-overlay a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent click from bubbling up to card
+        });
+    });
+
         // Card Stack Interactions
         const pinkCard = document.getElementById('card1');
         const orangeCard = document.getElementById('card2');

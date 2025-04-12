@@ -1,10 +1,14 @@
 <?php
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
 
-Route::get('/', function () {
-    return view('home');
-});
+// Home page route
+Route::get('/', [ProjectController::class, 'index']);
+
+// Project detail route
+Route::get('/collections/{slug}', [ProjectController::class, 'show'])->name('project.detail');
+
 Route::get('/card', function () {
     return view('cardtest');
 });
@@ -15,12 +19,4 @@ Route::get('/folder', function () {
 
 Route::get('/about', function () {
     return view('about');
-});
-
-Route::get('/collections/collection-detail1', function () {
-    return view('collections.collection-detail1');
-});
-
-Route::get('/collections/collection-detail2', function () {
-    return view('collections.collection-detail2');
 });
