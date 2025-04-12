@@ -11,15 +11,20 @@
     <!-- Alpine.js for dropdown -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body class="bg-gray-50">
+    <body class="bg-gray-50 m-0 p-0">
 
-    <!-- Include Navbar -->
-    @include('components.navbar')
+        <!-- Include Navbar -->
+        @include('components.navbar')
 
-    <!-- Main Content -->
-    <div class="container">
-        @yield('content')
-    </div>
+        <!-- Main Content Wrapper -->
+        <div class="w-full flex justify-center">
+            <div class="w-full">
+                @yield('content')
+            </div>
 
-</body>
+        </div>
+
+    </body>
+
+
 </html>

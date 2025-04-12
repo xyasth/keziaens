@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+@extends('layouts.app')
+
+@section('content')
   <title>Kezia Sagala - Portfolio</title>
   <style>
 @font-face {
@@ -36,7 +34,7 @@
       box-sizing: border-box;
     }
 
-    body {
+    /* body {
       font-family: 'Helvetica Neue', sans-serif;
       font-family: 'Myriad Pro', sans-serif;
       display: flex;
@@ -45,7 +43,7 @@
       position: relative;
       overflow-x: hidden;
       background-color: #ffff;
-    }
+    } */
 
     /* Sidebar - Updated to match exact content */
     .sidebar {
@@ -399,8 +397,6 @@
     }
   }
 </style>
-</head>
-<body>
 
     <div class="sidebar" id="sidebar">
         <h1>Kezia Sagala</h1>
@@ -556,6 +552,4 @@
       });
     });
   </script>
-
-</body>
-</html>
+@endsection

@@ -1,6 +1,6 @@
 <nav class="flex justify-between items-center p-4 bg-black text-white shadow relative z-50">
     <!-- Left Side: Logo -->
-    <a href="#" class="text-pink-400 font-bold uppercase">KEZIAENS</a>
+    <a href="/" class="text-pink-400 font-bold uppercase">KEZIAENS</a>
 
     <!-- Right Side: Info Button -->
     <div x-data="{ open: false }">

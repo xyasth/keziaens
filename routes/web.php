@@ -16,3 +16,11 @@ Route::get('/folder', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/collections/collection-detail1', function () {
+    return view('collections.collection-detail1');
+});
+
+Route::get('/collections/collection-detail2', function () {
+    return view('collections.collection-detail2');
+});

@@ -2,23 +2,25 @@
 
 @section('content')
 
-    @php
-        $projects = [
-            [
-                'title' => 'Kollabrasa',
-                'year' => 2024,
-                'image' => 'images/kollabrasa.jpg',
-                'tags' => ['Campaign Works', 'Community', 'Experience Design', 'Visual Identity'],
-            ],
-            [
-                'title' => 'Kollabrasa',
-                'year' => 2024,
-                'image' => 'images/kollabrasa.jpg',
-                'tags' => ['Campaign Works', 'Community', 'Experience Design', 'Visual Identity'],
-            ],
-            // Duplicate as needed
-        ];
-    @endphp
+@php
+$projects = [
+    [
+        'title' => 'Kollabrasa',
+        'year' => 2024,
+        'image' => 'images/kollabrasa.jpg',
+        'tags' => ['Campaign Works', 'Community', 'Experience Design', 'Visual Identity'],
+        'link' => '/collctions/collection-detail1', // → route ke halaman detail
+    ],
+    [
+        'title' => 'Project B',
+        'year' => 2023,
+        'image' => 'images/projectb.jpg',
+        'tags' => ['Illustration', 'Branding'],
+        'link' => '/collctions/collection-detail2', // → route ke halaman detail
+    ],
+];
+@endphp
+
 
 
     <!-- Main Container -->
@@ -137,7 +139,7 @@
 
                 <!-- Card 2 -->
                 <div class="card group" id="card2">
-                    <img src="{{ asset('images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
+                    <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
                         alt="Popular Releases" />
                     <div class="card-overlay">
                         <h2>Popular Releases</h2>
@@ -318,27 +320,25 @@
 
         /* Section 4 Styles */
         #section-four {
-            width: 100vw;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-        }
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
 
-        /* Background image treatment */
-        #section-four img {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            background-color: black;
-        }
+#section-four .absolute {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 
-        /* Content positioning */
-        #section-four .max-w-6xl {
-            width: 100%;
-            padding: 0 2rem;
-        }
+#section-four img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
     </style>
 
     <script>
