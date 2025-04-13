@@ -29,7 +29,7 @@
             </div>
 
             <div class="w-full text-center">
-                <a href="#tracklist"
+                <a href="/#tracklist"
                    @click="open = false"
                    class="text-2xl font-semibold hover:text-gray-300 block pb-2">Tracklist</a>
                 <div class="border-b-2 border-dotted border-gray-500 w-3/4 mx-auto"></div>

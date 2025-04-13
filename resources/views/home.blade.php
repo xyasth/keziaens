@@ -36,20 +36,33 @@ $projects = [
         <!-- Content Sections (Welcome + About) -->
         <div class="relative z-10">
             <!-- Welcome Section -->
-            <section class="h-screen flex flex-col items-center justify-center text-center px-4">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-pink-400 mb-4">
-                    Welcome to My Website
+            <section class="h-screen flex flex-col items-center justify-center text-center px-4 relative">
+
+                <!-- Text Content -->
+                <h1 class="text-6xl md:text-8xl font-bold text-black mb-2 z-10">
+                    Portfolio
                 </h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-pink-200 max-w-2xl mx-auto mb-8">
-                    Graphic Designer & Visual Storyteller
+                <p class="text-lg md:text-2xl text-black z-10">
+                    Kezia Enginia Sagala
                 </p>
-                <button onclick="scrollToAbout()" class="animate-bounce text-white hover:text-pink-300 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+
+                <!-- Scroll Info -->
+                <p class="text-sm pt-10 text-white">Scroll to get your tickets</p>
+
+                <!-- Scroll Button -->
+                <button onclick="scrollToAbout()" class="mt-5 animate-bounce text-white hover:text-pink-300 transition z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                     </svg>
                 </button>
+
+                <!-- Copyright & Credit - Responsive -->
+                <div class="absolute bottom-2 left-20 right-20 flex flex-col sm:flex-row justify-between items-center text-xs text-white z-30 gap-1 sm:gap-0">
+                    <div class="text-center sm:text-left">© 2025 Kezia Enginia Sagala</div>
+                    <div class="text-center sm:text-right">Website by Bernicko & Prayogo</div>
+                </div>
             </section>
 
             <!-- About Section -->

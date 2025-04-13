@@ -129,7 +129,7 @@
     } */
 
     .sidebar .contact-info {
-      font-size: 30px;
+      font-size: 25px;
     }
 
     .sidebar .contact-info p {
