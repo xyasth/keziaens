@@ -195,10 +195,10 @@
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 640px) {
     .profile-image-container {
-        width: 100px;
-        height: 100px;
+        width: 100%;
+        height: 96px; /* atau 24rem sesuai kebutuhan */
     }
 }
 
@@ -411,7 +411,7 @@
 
         <div class="intro">
           <p>Hello,</p>
-          <p>I'm Kezia Euginia Sagala. People often call me Kee,</p>
+          <p>I'm Kezia Enginia Sagala. People often call me Kee,</p>
           <p>I'm so enthusiastic graphic designer. with a deep love for music,</p>
           <p>culture, and creative storytelling. My works blends design, branding and digital</p>
           <p>experiences, often inspired by the rhythm and energy of the music industry.</p>

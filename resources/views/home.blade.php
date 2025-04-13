@@ -2,24 +2,24 @@
 
 @section('content')
 
-{{-- @php
-$projects = [
+    {{-- @php
+    $projects = [
     [
-        'title' => 'Kollabrasa',
-        'year' => 2024,
-        'image' => 'images/kollabrasa.jpg',
-        'tags' => ['Campaign Works', 'Community', 'Experience Design', 'Visual Identity'],
-        'link' => '/collctions/collection-detail1', // → route ke halaman detail
+    'title' => 'Kollabrasa',
+    'year' => 2024,
+    'image' => 'images/kollabrasa.jpg',
+    'tags' => ['Campaign Works', 'Community', 'Experience Design', 'Visual Identity'],
+    'link' => '/collctions/collection-detail1', // → route ke halaman detail
     ],
     [
-        'title' => 'Project B',
-        'year' => 2023,
-        'image' => 'images/projectb.jpg',
-        'tags' => ['Illustration', 'Branding'],
-        'link' => '/collctions/collection-detail2', // → route ke halaman detail
+    'title' => 'Project B',
+    'year' => 2023,
+    'image' => 'images/projectb.jpg',
+    'tags' => ['Illustration', 'Branding'],
+    'link' => '/collctions/collection-detail2', // → route ke halaman detail
     ],
-];
-@endphp --}}
+    ];
+    @endphp --}}
 
 
 
@@ -50,7 +50,8 @@ $projects = [
                 <p class="text-sm pt-10 text-white">Scroll to get your tickets</p>
 
                 <!-- Scroll Button -->
-                <button onclick="scrollToAbout()" class="mt-5 animate-bounce text-white hover:text-pink-300 transition z-10">
+                <button onclick="scrollToAbout()"
+                    class="mt-5 animate-bounce text-white hover:text-pink-300 transition z-10">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -59,49 +60,115 @@ $projects = [
                 </button>
 
                 <!-- Copyright & Credit - Responsive -->
-                <div class="absolute bottom-2 left-20 right-20 flex flex-col sm:flex-row justify-between items-center text-xs text-white z-30 gap-1 sm:gap-0">
+                <div
+                    class="absolute bottom-2 left-20 right-20 flex flex-col sm:flex-row justify-between items-center text-xs text-white z-30 gap-1 sm:gap-0">
                     <div class="text-center sm:text-left">© 2025 Kezia Enginia Sagala</div>
                     <div class="text-center sm:text-right">Website by Bernicko & Prayogo</div>
                 </div>
             </section>
 
-            <!-- About Section -->
-            <section id="about" class="min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-16 relative">
-                <!-- Main About Content -->
-                <div class="w-full max-w-4xl relative my-20">
-                    <p class="text-white text-5xl mb-4">About</p>
+            <section id="about"
+                class="min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-16 relative overflow-hidden">
+                <div class="w-full max-w-4xl relative my-20 z-10">
+                    <p class="text-white text-5xl mb-4 text-center sm:text-left z-10">About</p>
 
-                    <img src="{{ asset('images/TicketBG.png') }}" alt="Ticket Background"
-                        class="w-full h-full absolute rounded-3xl">
-                    <div class="relative bg-black bg-opacity-10 p-8 sm:p-12 rounded-3xl">
-                        <div class="flex flex-col lg:flex-row gap-8 items-center">
-                            <div class="w-40 h-40 rounded-lg overflow-hidden">
-                                <img src="{{ asset('images/Keziapic.png') }}" alt="Kezia Ens"
-                                    class="w-full h-full object-cover">
+                    <!-- DESKTOP VIEW -->
+                    <div class="hidden sm:block relative z-10">
+                        <!-- Background Image Desktop -->
+                        <img src="{{ asset('images/TicketBG.png') }}" alt="Ticket Background"
+                            class="w-full h-full absolute inset-0 rounded-3xl object-cover z-0">
+
+                        <!-- Foreground content -->
+                        <div class="relative bg-black bg-opacity-10 p-8 sm:p-12 rounded-3xl z-10">
+                            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                                <div class="w-40 h-40 rounded-lg overflow-hidden">
+                                    <img src="{{ asset('images/Keziapic.png') }}" alt="Kezia Ens"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 text-center lg:text-left">
+                                    <h2 class="text-2xl sm:text-3xl font-bold text-pink-300">Kezia Enginia Sagala</h2>
+                                    <p class="text-pink-200 text-sm mb-4">SACRAHIO BREEDUP HOUR</p>
+                                    <p class="text-white text-sm sm:text-base mb-6 leading-relaxed">
+                                        I'm Kezia Enginia—graphic designer, visual storyteller, and music enthusiast.
+                                        Driven by a relentless curiosity to blend art with innovation, I craft designs that
+                                        resonate, provoke, and inspire.
+                                    </p>
+                                </div>
+                                <div class="w-full lg:w-auto text-sm space-y-3">
+                                    <div>
+                                        <p class="text-pink-300 font-medium">Contact</p>
+                                        <p class="text-white">keziaens@gmail.com</p>
+                                        <p class="text-white">behance.net/keziaens</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-pink-300 font-medium">Instagram</p>
+                                        <p class="text-white">@keziaens</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-pink-300 font-medium">Barcode</p>
+                                        <p class="text-white">Row</p>
+                                    </div>
+
+                            <div class="mt-5">
+                                <a href="/about">
+                                    <button
+                                        class="bg-white text-black text-sm font-semibold px-4 py-2 rounded-full hover:bg-pink-200 transition">
+                                        More about
+                                    </button>
+                                </a>
                             </div>
-                            <div class="flex-1 text-center lg:text-left">
-                                <h2 class="text-2xl sm:text-3xl font-bold text-pink-300">Kezia Enginia Sagala</h2>
-                                <p class="text-pink-200 text-sm mb-4">SACRAHIO BREEDUP HOUR</p>
-                                <p class="text-white text-sm sm:text-base mb-6 leading-relaxed">
-                                    I'm Kezia Enginia—graphic designer, visual storyteller, and music enthusiast.
-                                    Driven by a relentless curiosity to blend art with innovation, I craft designs that
-                                    resonate, provoke, and inspire.
-                                </p>
+                                </div>
                             </div>
-                            <div class="w-full lg:w-auto text-sm space-y-3">
+                        </div>
+                    </div>
+
+                    <!-- MOBILE VIEW -->
+                    <div class="block sm:hidden relative z-10">
+                        <!-- Background Image Mobile -->
+                        <img src="{{ asset('images/TICKET-10.png') }}" alt="Ticket Background Mobile"
+                            class="absolute inset-0 w-full h-[130%] object-cover rounded-3xl z-0" />
+
+                        <!-- Mobile Content -->
+                        <div class="relative p-6 pt-72 pb-8 text-white text-center rounded-3xl z-10">
+                            <div class="w-28 h-28 rounded-lg overflow-hidden mx-auto mb-4">
+                                {{-- <img src="{{ asset('images/Keziapic.png') }}" alt="Kezia Ens"
+                                    class="w-full h-full object-cover"> --}}
+                            </div>
+
+                            <h2 class="text-2xl font-bold text-white">Kezia Ens</h2>
+                            <p class="text-sm text-pink-200">Kezia Enginia Sagala</p>
+                            <p class="text-lg text-pink-300 font-medium my-2">Graphic Designer</p>
+
+                            <p class="text-xs text-white leading-relaxed mb-4">
+                                I'm Kezia Enginia—graphic designer, visual storyteller, and music enthusiast.
+                                Driven by a relentless curiosity to blend art with innovation, I craft designs
+                                that resonate, provoke, and inspire. I love challenging creative conventions and
+                                bringing vibrant ideas to life.
+                            </p>
+
+                            <div class="text-xs space-y-3">
                                 <div>
                                     <p class="text-pink-300 font-medium">Contact</p>
-                                    <p class="text-white">keziaens@gmail.com</p>
-                                    <p class="text-white">behance.net/keziaens</p>
+                                    <p>keziaens@gmail.com</p>
+                                    <p>behance.net/keziaens</p>
                                 </div>
                                 <div>
                                     <p class="text-pink-300 font-medium">Instagram</p>
-                                    <p class="text-white">@keziaens</p>
+                                    <p>@keziaens</p>
                                 </div>
                                 <div>
                                     <p class="text-pink-300 font-medium">Barcode</p>
-                                    <p class="text-white">Row</p>
+                                    <p>Row</p>
                                 </div>
+                            </div>
+
+                            <div class="mt-5">
+                                <a href="/about">
+                                    <button
+                                        class="bg-white text-black text-sm font-semibold px-4 py-2 rounded-full hover:bg-pink-200 transition">
+                                        More about
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -111,115 +178,114 @@ $projects = [
     </div>
 
     <!-- Tracklist Section -->
-   <!-- Tracklist Section -->
-<section id="tracklist" class="bg-black text-white px-4 sm:px-8 lg:px-16 relative overflow-hidden py-20">
-    <div class="max-w-2xl relative pl-8 md:pl-10 lg:pl-64 mb-12">
-        <p class="text-white text-5xl">Tracklist</p>
-    </div>
+    <section id="tracklist" class="bg-black text-white px-4 sm:px-8 lg:px-16 relative overflow-hidden py-20">
+        <div class="max-w-2xl relative pl-8 md:pl-10 lg:pl-64 mb-12">
+            <p class="text-white text-5xl">Tracklist</p>
+        </div>
 
-    <div class="container relative w-full flex items-center justify-center">
-        <div class="card-stack w-full max-w-4xl relative pb-80">
-            <!-- Card 1 -->
-            <div class="card group" id="card1">
-                <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
-                    alt="Artist Pick" />
-                <div class="card-overlay">
-                    <h2>Artist Pick</h2>
-                    <div class="tap-to-view">TAP TO VIEW</div>
-                    <div class="subtitle">Instruction to own design</div>
-                    <ul>
-                        <div class="grid gap-6">
-                            @foreach ($webProjects  as $project)
-                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                    <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
-                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                            class="w-48 rounded-md shadow-md" />
-                                        <div>
-                                            <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
-                                            <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
-                                            <div class="flex flex-wrap gap-2">
-                                                @foreach ($project['tags'] as $tag)
-                                                    <span
-                                                        class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
-                                                @endforeach
+        <div class="container relative w-full flex items-center justify-center">
+            <div class="card-stack w-full max-w-4xl relative pb-80">
+                <!-- Card 1 -->
+                <div class="card group" id="card1">
+                    <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
+                        alt="Artist Pick" />
+                    <div class="card-overlay">
+                        <h2>Artist Pick</h2>
+                        <div class="tap-to-view">TAP TO VIEW</div>
+                        <div class="subtitle">Instruction to own design</div>
+                        <ul>
+                            <div class="grid gap-6">
+                                @foreach ($webProjects as $project)
+                                    <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                        <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                            <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                                class="w-48 rounded-md shadow-md" />
+                                            <div>
+                                                <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
+                                                <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                                <div class="flex flex-wrap gap-2">
+                                                    @foreach ($project['tags'] as $tag)
+                                                        <span
+                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                    @endforeach
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </ul>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="card group" id="card2">
-                <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
-                    alt="Popular Releases" />
-                <div class="card-overlay">
-                    <h2>Popular Releases</h2>
-                    <div class="tap-to-view">TAP TO VIEW</div>
-                    <div class="subtitle">Top centralized</div>
-                    <ul>
-                        <div class="grid gap-6">
-                            @foreach ($webProjects  as $project)
-                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                    <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
-                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                            class="w-48 rounded-md shadow-md" />
-                                        <div>
-                                            <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
-                                            <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
-                                            <div class="flex flex-wrap gap-2">
-                                                @foreach ($project['tags'] as $tag)
-                                                    <span
-                                                        class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
-                                                @endforeach
+                <!-- Card 2 -->
+                <div class="card group" id="card2">
+                    <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
+                        alt="Popular Releases" />
+                    <div class="card-overlay">
+                        <h2>Popular Releases</h2>
+                        <div class="tap-to-view">TAP TO VIEW</div>
+                        <div class="subtitle">Top centralized</div>
+                        <ul>
+                            <div class="grid gap-6">
+                                @foreach ($webProjects as $project)
+                                    <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                        <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                            <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                                class="w-48 rounded-md shadow-md" />
+                                            <div>
+                                                <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
+                                                <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                                <div class="flex flex-wrap gap-2">
+                                                    @foreach ($project['tags'] as $tag)
+                                                        <span
+                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                    @endforeach
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </ul>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Card 3 -->
-            <div class="card group" id="card3">
-                <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
-                    alt="Featured Collections" />
-                <div class="card-overlay">
-                    <h2>Featured Collections</h2>
-                    <div class="tap-to-view">TAP TO VIEW</div>
-                    <div class="subtitle">Curated for you</div>
-                    <ul>
-                        <div class="grid gap-6">
-                            @foreach ($webProjects  as $project)
-                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                    <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
-                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                            class="w-48 rounded-md shadow-md" />
-                                        <div>
-                                            <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
-                                            <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
-                                            <div class="flex flex-wrap gap-2">
-                                                @foreach ($project['tags'] as $tag)
-                                                    <span
-                                                        class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
-                                                @endforeach
+                <!-- Card 3 -->
+                <div class="card group" id="card3">
+                    <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
+                        alt="Featured Collections" />
+                    <div class="card-overlay">
+                        <h2>Featured Collections</h2>
+                        <div class="tap-to-view">TAP TO VIEW</div>
+                        <div class="subtitle">Curated for you</div>
+                        <ul>
+                            <div class="grid gap-6">
+                                @foreach ($webProjects as $project)
+                                    <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                        <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                            <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                                class="w-48 rounded-md shadow-md" />
+                                            <div>
+                                                <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
+                                                <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                                <div class="flex flex-wrap gap-2">
+                                                    @foreach ($project['tags'] as $tag)
+                                                        <span
+                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                    @endforeach
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </ul>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Section 4 with Full-Width Horizontal Background -->
     <section id="section-four" class="min-h-screen relative overflow-hidden">
@@ -355,25 +421,24 @@ $projects = [
 
         /* Section 4 Styles */
         #section-four {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-}
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
 
-#section-four .absolute {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
+        #section-four .absolute {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-#section-four img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
+        #section-four img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 
     <script>
@@ -395,10 +460,10 @@ $projects = [
         });
 
         document.querySelectorAll('.card-overlay a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent click from bubbling up to card
+            link.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent click from bubbling up to card
+            });
         });
-    });
 
         // Card Stack Interactions
         const pinkCard = document.getElementById('card1');
