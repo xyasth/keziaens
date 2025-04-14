@@ -19,7 +19,7 @@
 
             <!-- Close/Home Button -->
             <div class="w-full flex justify-end">
-                <a href="#" class="text-pink-400 font-bold uppercase">HOME</a>
+                <a href="/" class="text-pink-400 font-bold uppercase">HOME</a>
             </div>
 
             <!-- Sidebar Links -->

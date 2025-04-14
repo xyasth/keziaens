@@ -2,27 +2,6 @@
 
 @section('content')
 
-    {{-- @php
-    $projects = [
-    [
-    'title' => 'Kollabrasa',
-    'year' => 2024,
-    'image' => 'images/kollabrasa.jpg',
-    'tags' => ['Campaign Works', 'Community', 'Experience Design', 'Visual Identity'],
-    'link' => '/collctions/collection-detail1', // → route ke halaman detail
-    ],
-    [
-    'title' => 'Project B',
-    'year' => 2023,
-    'image' => 'images/projectb.jpg',
-    'tags' => ['Illustration', 'Branding'],
-    'link' => '/collctions/collection-detail2', // → route ke halaman detail
-    ],
-    ];
-    @endphp --}}
-
-
-
     <!-- Main Container -->
     <div class="relative w-full">
         <!-- Scrolling Background Image (for first 2 sections only) -->
@@ -190,23 +169,19 @@
                     <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
                         alt="Artist Pick" />
                     <div class="card-overlay">
-                        <h2>Artist Pick</h2>
-                        <div class="tap-to-view">TAP TO VIEW</div>
-                        <div class="subtitle">Instruction to own design</div>
-                        <ul>
-                            <div class="grid gap-6">
+                        <ul class="grid mt-32">
+                            <div class="grid">
                                 @foreach ($webProjects as $project)
                                     <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                        <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
                                                 class="w-48 rounded-md shadow-md" />
                                             <div>
-                                                <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
-                                                <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
+                                                <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
-                                                        <span
-                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                        <span class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -223,23 +198,19 @@
                     <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
                         alt="Popular Releases" />
                     <div class="card-overlay">
-                        <h2>Popular Releases</h2>
-                        <div class="tap-to-view">TAP TO VIEW</div>
-                        <div class="subtitle">Top centralized</div>
-                        <ul>
-                            <div class="grid gap-6">
+                        <ul class="grid mt-32">
+                            <div class="grid">
                                 @foreach ($webProjects as $project)
                                     <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                        <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
                                                 class="w-48 rounded-md shadow-md" />
                                             <div>
-                                                <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
-                                                <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
+                                                <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
-                                                        <span
-                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                        <span class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -256,23 +227,19 @@
                     <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
                         alt="Featured Collections" />
                     <div class="card-overlay">
-                        <h2>Featured Collections</h2>
-                        <div class="tap-to-view">TAP TO VIEW</div>
-                        <div class="subtitle">Curated for you</div>
-                        <ul>
-                            <div class="grid gap-6">
+                        <ul class="grid mt-32">
+                            <div class="grid">
                                 @foreach ($webProjects as $project)
                                     <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                        <div class="bg-[#1a1a1a] rounded-xl p-4 flex gap-6 items-start">
+                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
                                                 class="w-48 rounded-md shadow-md" />
                                             <div>
-                                                <h2 class="text-2xl font-semibold">{{ $project['title'] }}</h2>
-                                                <p class="text-sm text-gray-400 mb-3">{{ $project['year'] }}</p>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
+                                                <p class="text-pink-400 text-sm mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
-                                                        <span
-                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                        <span class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -288,47 +255,47 @@
     </section>
 
     <!-- Section 4 with Full-Width Horizontal Background -->
-    <section id="section-four" class="min-h-screen relative overflow-hidden">
-        <!-- Full-width Background Container -->
-        <div class="absolute inset-0 -z-10 w-full h-full">
-            <!-- Horizontal Background Image -->
-            <img src="{{ asset('images/HomeBG2.png') }}" alt="Background" class="w-full h-full object-cover object-left">
-        </div>
+<section id="section-four" class="min-h-screen relative overflow-hidden">
+    <!-- Full-width Background Container -->
+    <div class="absolute inset-0 -z-10 w-full h-full">
+        <!-- Horizontal Background Image -->
+        <img src="{{ asset('images/HomeBG2.png') }}" alt="Background" class="w-full h-full object-cover object-left">
+    </div>
 
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 -z-10 bg-black bg-opacity-70"></div>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 -z-10 bg-black bg-opacity-70"></div>
 
-        <!-- Content Container -->
-        <div class="relative z-10 h-full flex flex-col items-center justify-center px-4 py-20">
-            <div class="max-w-2xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-400 mb-6">Contacts</h2>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
-                    Email
-                </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                    <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
-                </p>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto ">
-                    Instagram
-                </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                    <a href="https://instagram.com/keziaens">@keziaens</a>
-                </p>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto ">
-                    Behance
-                </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                    <a href="https://behance.net/keziaens">behance.net/keziaens</a>
-                </p>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto ">
-                    Spotify
-                </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                    <a href="https://behance.net/keziaens">Kezia Sagala</a>
-                </p>
-            </div>
+    <!-- Content Container with Myriad Font -->
+    <div class="relative z-10 h-full flex flex-col items-center justify-center px-4 py-20 ">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-400 mb-6">Contacts</h2>
+            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                Email
+            </p>
+            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
+            </p>
+            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                Instagram
+            </p>
+            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                <a href="https://instagram.com/keziaens">@keziaens</a>
+            </p>
+            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                Behance
+            </p>
+            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                <a href="https://behance.net/keziaens">behance.net/keziaens</a>
+            </p>
+            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q">Spotify</a>
+            </p>
+            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                <a href="https://behance.net/keziaens">Kezia Sagala</a>
+            </p>
         </div>
-    </section>
+    </div>
+</section>
 
     <style>
 
@@ -336,6 +303,24 @@
 
 
     <style>
+
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('/fonts/myriad-pro/MYRIADPRO-REGULAR.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Apply to specific elements or globally */
+.font-myriad {
+    font-family: 'MyriadPro', sans-serif;
+}
+        body {
+            background-color: #000 !important;
+            color: #fff !important; /* Ensures default text is white */
+        }
+
         .card-stack {
             position: relative;
             min-height: 500px;
