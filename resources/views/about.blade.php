@@ -3,31 +3,15 @@
 @section('content')
   <title>Kezia Sagala - Portfolio</title>
   <style>
+
 @font-face {
-  font-family: 'Myriad Pro';
-  src: url("/Fonts/myriad-pro/MYRIADPRO.REGULAR.otf") format("opentype");
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Myriad Pro';
-  src: url("/Fonts/myriad-pro/MYRIADPRO.REGULAR.otf") format("opentype");
+  font-family: 'Lampoon Brush';
+  src: url("/fonts/LAMPOOB2.TTF") format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
-@font-face {
-  font-family: 'Myriad Pro';
-  src: url("/Fonts/myriad-pro/MYRIADPRO.BOLD.otf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Myriad Pro';
-  src: url("/Fonts/myriad-pro/MYRIADPRO.SEMIBOLD.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
     * {
       margin: 0;
       padding: 0;
@@ -103,7 +87,7 @@
 
     .sidebar .intro p {
       margin-bottom: 15px;
-      font-family: 'Myriad-PBro', sans-serif;
+      font-family: 'Lampoon Brush', sans-serif;
     }
 
     .sidebar h2 {
@@ -461,8 +445,9 @@
     <div class="divider"></div>
 
     <div class="contact-info">
-     <p><strong>Email</strong>
-      keziaens@gmail.com</p>
+        <p><strong>Email</strong>
+          <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
+        </p>
 
       <p><strong>Instagram</strong>
       <a href="https://instagram.com/keziaens">@keziaens</a></p>
@@ -474,7 +459,7 @@
         <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q">Kezia Sagala</a></p>
 
       <p><strong>Curriculum Vitae</strong>
-      <a href="#">download here</a></p>
+      <a href="https://drive.google.com/file/d/1KgJ3o6tMQrIpJtzXqkQ6-fmQRR6j2sxc/view">download here</a></p>
     </div>
   </div>
 
