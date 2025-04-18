@@ -6,11 +6,11 @@
         <div class="max-w-5xl mx-auto">
             <!-- Header -->
             <div class="mb-10">
-                <h1 class="text-6xl font-bold tracking-wide mb-2">{{ $project['Tracklist'] }}</h1>
+                <h1 class="text-6xl tracking-wide mb-2">{{ $project['Tracklist'] }}</h1>
             </div>
-
+            <hr class="border-t border-dashed border-white w-full">
             <!-- Project Title & Metadata -->
-            <h2 class="text-4xl font-bold mb-2">{{ $project['title'] }}</h2>
+            <h2 class="pt-8 text-6xl font-bold mb-2">{{ $project['title'] }}</h2>
             <p class="text-gray-300 text-md mb-4">{{ $project['year'] }}</p>
 
             <!-- Tags -->
@@ -20,30 +20,57 @@
                 @endforeach
             </div>
 
+            <hr class="w-full border-t-2 border-white my-6">
             <!-- Challenge Section -->
+            <!-- Challenge & Approach Section in 2-column layout -->
             <div class="mb-8">
-                <h3 class="text-white font-semibold text-lg mb-2">Challenge</h3>
-                <p class="text-gray-400 text-md">{{ $project['Challenges'] }}</p>
+                <table class="w-full table-auto border-collapse border-0">
+                    <tbody>
+                        <tr>
+                            <td class="text-white font-semibold text-base pr-6 align-top border-0 w-1/5">
+                                Challenge
+                            </td>
+                            <td class="text-white text-md border-0">
+                                {{ $project['Challenges'] }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-white font-semibold text-base pr-6 align-top border-0 w-1/5 pt-4">
+                                Approach
+                            </td>
+                            <td class="text-white text-md border-0 pt-4">
+                                {{ $project['approach'] }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+<hr class="my-6 border-white">
 
-            <!-- Approach Section -->
-            <div class="mb-8">
-                <h3 class="text-white font-semibold text-lg mb-2">Approach</h3>
-                <p class="text-gray-400 text-md">{{ $project['approach'] }}</p>
-            </div>
 
             <!-- Result (dynamic details) -->
             <div class="mb-8">
-                <h3 class="text-white font-semibold text-lg mb-4">Result</h3>
+                <table class="w-full table-auto border-collapse border-0 pd-4">
+                    <tbody>
+                        <tr>
+                            <td class="text-white font-semibold text-base pr-6 align-top border-0 w-1/5">
+                                Result
+                            </td>
+                            <td class="text-white font-semibold border-0">
+                                {{ $project['Result'] }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <div class="space-y-8">
                     @foreach ($project['details'] as $block)
                         @switch($block['type'])
-
                             {{-- Pattern --}}
                             @case('pattern')
-                                <p class="text-gray-300 leading-relaxed">{{ $block['content'] }}</p>
-                                <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
+                                <div class="pt-8 flex flex-col items-center gap-4">
+                                    <img src="{{ asset($block['url']) }}" class="w-1/2 rounded-lg shadow-md" alt="">
+                                </div>
                                 <img src="{{ asset($block['url2']) }}" class="w-full rounded-lg shadow-md" alt="">
                             @break
 
@@ -59,41 +86,8 @@
                                 <p class="text-gray-300 leading-relaxed">{{ $block['text'] }}</p>
                             @break
 
-                            {{-- graphic --}}
-                            @case('row3')
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                    @foreach ($block['items'] as $sub)
-                                        @switch($sub['type'])
-                                            @case('gallery')
-                                                <div class="space-y-4">
-                                                    @foreach ($sub['images'] as $img)
-                                                        <img src="{{ asset($img) }}" class="w-full rounded shadow" alt="">
-                                                    @endforeach
-                                                </div>
-                                            @break
-
-                                            @case('image')
-                                                <img src="{{ asset($sub['url']) }}" class="w-full rounded-lg shadow-lg" alt="">
-                                            @break
-                                        @endswitch
-                                    @endforeach
-                                </div>
-                            @break
-
-                            {{-- Gallery of images --}}
-                            @case('gallery')
-                                @if (!empty($block['title']))
-                                    <h4 class="text-xl font-semibold mb-2">{{ $block['title'] }}</h4>
-                                @endif
-                                <div class="grid grid-cols-3 gap-4">
-                                    @foreach ($block['images'] as $url)
-                                        <img src="{{ asset($url) }}" class="w-full h-auto rounded shadow" alt="">
-                                    @endforeach
-                                </div>
-                            @break
-
-                            {{-- Single image --}}
-                            @case('image')
+                            {{-- Merchandise --}}
+                            @case('Merchandise')
                                 <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
                             @break
 
