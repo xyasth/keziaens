@@ -6,26 +6,53 @@
     <title>Kezia Enginia Sagala</title>
     <link rel="icon" href="{{ asset('images/Keziapic.png') }}" type="image/png">
 
+    <style>
+        @font-face {
+            font-family: 'MyriadPro';
+            src: url("{{ asset('fonts/myriad-pro/MYRIADPRO-REGULAR.OTF') }}") format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'MyriadPro';
+            src: url("{{ asset('fonts/myriad-pro/MYRIADPRO-BOLD.OTF') }}") format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'MyriadPro';
+            src: url("{{ asset('fonts/myriad-pro/MYRIADPRO-ITALIC.OTF') }}") format('opentype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        /* Jadikan MyriadPro sebagai font default, dan helper class */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'MyriadPro', sans-serif !important;
+            background-color: #f9fafb; /* sesuai bg-gray-50 */
+        }
+        .font-myriad {
+            font-family: 'MyriadPro', sans-serif !important;
+        }
+    </style>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Alpine.js for dropdown -->
+    <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-    <body class="bg-gray-50 m-0 p-0">
+<body class="font-myriad bg-gray-50 m-0 p-0">
+    @include('components.navbar')
 
-        <!-- Include Navbar -->
-        @include('components.navbar')
-
-        <!-- Main Content Wrapper -->
-        <div class="w-full flex justify-center">
-            <div class="w-full">
-                @yield('content')
-            </div>
-
+    <div class="w-full flex justify-center">
+        <div class="w-full">
+            @yield('content')
         </div>
-
-    </body>
-
-
+    </div>
+</body>
 </html>

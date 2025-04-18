@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <!-- Main Container -->
     <div class="relative w-full">
         <!-- Scrolling Background Image (for first 2 sections only) -->
@@ -18,7 +17,7 @@
             <section class="h-screen flex flex-col items-center justify-center text-center px-4 relative">
 
                 <!-- Text Content -->
-                <h1 class="text-6xl md:text-8xl font-bold text-black mb-2 z-10">
+                <h1 class="text-6xl md:text-8xl font-myriad text-black mb-2 z-10">
                     Portfolio
                 </h1>
                 <p class="text-lg md:text-2xl text-black z-10">
@@ -88,14 +87,14 @@
                                         <p class="text-white">Row</p>
                                     </div>
 
-                            <div class="mt-5">
-                                <a href="/about">
-                                    <button
-                                        class="bg-white text-black text-sm font-semibold px-4 py-2 rounded-full hover:bg-pink-200 transition">
-                                        More about
-                                    </button>
-                                </a>
-                            </div>
+                                    <div class="mt-5">
+                                        <a href="/about">
+                                            <button
+                                                class="bg-white text-black text-sm font-semibold px-4 py-2 rounded-full hover:bg-pink-200 transition">
+                                                More about
+                                            </button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +166,7 @@
                 <!-- Card 1 -->
                 <div class="card group" id="card1">
                     <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Artist Pick" />
+                        alt="Product/Packaging" />
                     <div class="card-overlay">
                         <ul class="grid mt-32">
                             <div class="grid">
@@ -177,11 +176,13 @@
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
                                                 class="w-48 rounded-md shadow-md" />
                                             <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}
+                                                </h1>
                                                 <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
-                                                        <span class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                        <span
+                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -196,7 +197,7 @@
                 <!-- Card 2 -->
                 <div class="card group" id="card2">
                     <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Popular Releases" />
+                        alt="Campaign" />
                     <div class="card-overlay">
                         <ul class="grid mt-32">
                             <div class="grid">
@@ -206,11 +207,13 @@
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
                                                 class="w-48 rounded-md shadow-md" />
                                             <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}
+                                                </h1>
                                                 <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
-                                                        <span class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                        <span
+                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -225,7 +228,7 @@
                 <!-- Card 3 -->
                 <div class="card group" id="card3">
                     <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Featured Collections" />
+                        alt="Branding" />
                     <div class="card-overlay">
                         <ul class="grid mt-32">
                             <div class="grid">
@@ -235,11 +238,13 @@
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
                                                 class="w-48 rounded-md shadow-md" />
                                             <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}
+                                                </h1>
                                                 <p class="text-pink-400 text-sm mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
-                                                        <span class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
+                                                        <span
+                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -255,70 +260,58 @@
     </section>
 
     <!-- Section 4 with Full-Width Horizontal Background -->
-<section id="section-four" class="min-h-screen relative overflow-hidden">
-    <!-- Full-width Background Container -->
-    <div class="absolute inset-0 -z-10 w-full h-full">
-        <!-- Horizontal Background Image -->
-        <img src="{{ asset('images/HomeBG2.png') }}" alt="Background" class="w-full h-full object-cover object-left">
-    </div>
-
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 -z-10 bg-black bg-opacity-70"></div>
-
-    <!-- Content Container with Myriad Font -->
-    <div class="relative z-10 h-full flex flex-col items-center justify-center px-4 py-20 ">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-400 mb-6">Contacts</h2>
-            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
-                Email
-            </p>
-            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
-            </p>
-            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
-                Instagram
-            </p>
-            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                <a href="https://instagram.com/keziaens">@keziaens</a>
-            </p>
-            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
-                Behance
-            </p>
-            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                <a href="https://behance.net/keziaens">behance.net/keziaens</a>
-            </p>
-            <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
-                <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q">Spotify</a>
-            </p>
-            <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                <a href="https://behance.net/keziaens">Kezia Sagala</a>
-            </p>
+    <section id="section-four" class="min-h-screen relative overflow-hidden">
+        <!-- Full-width Background Container -->
+        <div class="absolute inset-0 -z-10 w-full h-full">
+            <!-- Horizontal Background Image -->
+            <img src="{{ asset('images/HomeBG2.png') }}" alt="Background"
+                class="w-full h-full object-cover object-left">
         </div>
-    </div>
-</section>
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 -z-10 bg-black bg-opacity-70"></div>
+
+        <!-- Content Container with Myriad Font -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-center px-4 py-20 ">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-400 mb-6">Contacts</h2>
+                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                    Email
+                </p>
+                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                    <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
+                </p>
+                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                    Instagram
+                </p>
+                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                    <a href="https://instagram.com/keziaens">@keziaens</a>
+                </p>
+                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                    Behance
+                </p>
+                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                    <a href="https://behance.net/keziaens">behance.net/keziaens</a>
+                </p>
+                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                    <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q">Spotify</a>
+                </p>
+                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                    <a href="https://behance.net/keziaens">Kezia Sagala</a>
+                </p>
+            </div>
+        </div>
+    </section>
 
     <style>
-
-    </style>
-
-
-    <style>
-
-@font-face {
-    font-family: 'MyriadPro';
-    src: url('/fonts/myriad-pro/MYRIADPRO-REGULAR.OTF') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Apply to specific elements or globally */
-.font-myriad {
-    font-family: 'MyriadPro', sans-serif;
-}
         body {
+            font-family: 'MyriadPro', sans-serif;
             background-color: #000 !important;
-            color: #fff !important; /* Ensures default text is white */
+            color: #fff !important;
+        }
+
+        .font-myriad {
+            font-family: 'MyriadPro', sans-serif;
         }
 
         .card-stack {
@@ -427,7 +420,6 @@
     </style>
 
     <script>
-
         window.addEventListener('load', () => {
             const cards = document.querySelectorAll('.card');
             const cardStack = document.querySelector('.card-stack');
@@ -478,7 +470,9 @@
         function scrollToAbout() {
             const aboutSection = document.getElementById("about");
             if (aboutSection) {
-                aboutSection.scrollIntoView({ behavior: "smooth" });
+                aboutSection.scrollIntoView({
+                    behavior: "smooth"
+                });
             }
         }
     </script>
