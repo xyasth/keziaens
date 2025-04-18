@@ -90,6 +90,17 @@
                                 <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
                             @break
 
+                            {{-- Vinyl album --}}
+                            @case('Vinyl')
+                                <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
+                            @break
+
+                            {{-- Vinyl images --}}
+                            @case('Vinyl_image')
+                            <hr class="my-6 border-white">
+                                <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
+                            @break
+
                             {{-- add more block types here as needed --}}
                         @endswitch
                     @endforeach

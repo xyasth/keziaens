@@ -169,8 +169,8 @@
                         alt="Pattern" />
                     <div class="card-overlay">
                         <ul class="grid mt-32">
-                            <div class="grid">
-                                @foreach ($pattern as $project)
+                            <div class="grid gap-4">
+                                @foreach ($product as $project)
                                     <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
                                         <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start max-w-full">
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
