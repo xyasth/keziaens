@@ -163,21 +163,21 @@
 
         <div class="container relative w-full flex items-center justify-center">
             <div class="card-stack w-full max-w-4xl relative pb-80">
-                <!-- Card 1 -->
+                <!-- Card 1 - Pattern -->
                 <div class="card group" id="card1">
                     <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Product/Packaging" />
+                        alt="Pattern" />
                     <div class="card-overlay">
                         <ul class="grid mt-32">
                             <div class="grid">
-                                @foreach ($webProjects as $project)
+                                @foreach ($pattern as $project)
                                     <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
+                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start max-w-full">
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                                class="w-48 rounded-md shadow-md" />
+                                                class="w-32 h-24 object-cover rounded-lg shadow-md shrink-0" />
+
                                             <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}
-                                                </h1>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
                                                 <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
@@ -194,21 +194,20 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2 - Campaign -->
                 <div class="card group" id="card2">
-                    <img src="{{ asset(path: 'images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
+                    <img src="{{ asset('images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
                         alt="Campaign" />
                     <div class="card-overlay">
                         <ul class="grid mt-32">
                             <div class="grid">
-                                @foreach ($webProjects as $project)
+                                @foreach ($campaign as $project)
                                     <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
                                         <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                                class="w-48 rounded-md shadow-md" />
+                                                class="w-32 h-24 object-cover rounded-lg shadow-md shrink-0" />
                                             <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}
-                                                </h1>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
                                                 <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
@@ -225,22 +224,21 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3 - Branding -->
                 <div class="card group" id="card3">
                     <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
                         alt="Branding" />
                     <div class="card-overlay">
                         <ul class="grid mt-32">
                             <div class="grid">
-                                @foreach ($webProjects as $project)
+                                @foreach ($branding as $project)
                                     <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
                                         <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
                                             <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                                class="w-48 rounded-md shadow-md" />
+                                                class="w-32 h-24 object-cover rounded-lg shadow-md shrink-0" />
                                             <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}
-                                                </h1>
-                                                <p class="text-pink-400 text-sm mb-3">{{ $project['year'] }}</p>
+                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
+                                                <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
                                                 <div class="flex flex-wrap gap-2">
                                                     @foreach ($project['tags'] as $tag)
                                                         <span
@@ -259,13 +257,13 @@
         </div>
     </section>
 
+
     <!-- Section 4 with Full-Width Horizontal Background -->
     <section id="section-four" class="min-h-screen relative overflow-hidden">
         <!-- Full-width Background Container -->
         <div class="absolute inset-0 -z-10 w-full h-full">
             <!-- Horizontal Background Image -->
-            <img src="{{ asset('images/HomeBG2.png') }}" alt="Background"
-                class="w-full h-full object-cover object-left">
+            <img src="{{ asset('images/HomeBG2.png') }}" alt="Background" class="w-full h-full object-cover object-left">
         </div>
 
         <!-- Dark Overlay -->
@@ -353,6 +351,15 @@
             border-radius: 15px;
         }
 
+        .card-overlay img {
+            width: 320px;
+            height: 120px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 8px;
+        }
+
+
         .card h2 {
             font-size: 1.25rem;
             font-weight: bold;
@@ -416,6 +423,14 @@
             object-fit: cover;
             width: 100%;
             height: 100%;
+        }
+
+        .thumbnail-img {
+            width: 160px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
         }
     </style>
 

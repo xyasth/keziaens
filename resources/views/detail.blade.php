@@ -2,17 +2,11 @@
 
 @section('content')
     <div class="min-h-screen bg-black text-white p-6 font-sans">
-        <!-- Back Button -->
-        <a href="{{ url('/') }}" class="inline-block mb-6 text-sm text-gray-400 hover:text-white transition">
-            ← Back to Home
-        </a>
-
         <!-- Project Content -->
         <div class="max-w-5xl mx-auto">
             <!-- Header -->
             <div class="mb-10">
-                {{-- <h2 class="text-purple-400 text-sm font-bold uppercase mb-1">acumin</h2> --}}
-                <h1 class="text-6xl font-bold tracking-wide mb-2">Tracklist 04</h1>
+                <h1 class="text-6xl font-bold tracking-wide mb-2">{{ $project['Tracklist'] }}</h1>
             </div>
 
             <!-- Project Title & Metadata -->
@@ -21,45 +15,94 @@
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2 text-sm mb-6">
-                @foreach($project['tags'] as $tag)
+                @foreach ($project['tags'] as $tag)
                     <span class="bg-gray-800 border border-gray-600 px-3 py-1 rounded-full">{{ $tag }}</span>
                 @endforeach
             </div>
 
             <!-- Challenge Section -->
             <div class="mb-8">
-                {{-- <h3 class="text-green-400 font-bold text-lg mb-1">Challenge</h3> --}}
-                {{-- <p class="text-yellow-300 font-bold text-sm mb-2">Space grotesk</p> --}}
-                <p class="text-gray-300 leading-relaxed text-md">{{ $project['description'] }}</p>
+                <h3 class="text-white font-semibold text-lg mb-2">Challenge</h3>
+                <p class="text-gray-400 text-md">{{ $project['Challenges'] }}</p>
             </div>
 
             <!-- Approach Section -->
             <div class="mb-8">
                 <h3 class="text-white font-semibold text-lg mb-2">Approach</h3>
-                <p class="text-gray-400 text-md">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
-                </p>
+                <p class="text-gray-400 text-md">{{ $project['approach'] }}</p>
             </div>
 
-            <!-- Image Preview -->
-            <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}" class="rounded-xl shadow-lg mb-10 w-full">
+            <!-- Result (dynamic details) -->
+            <div class="mb-8">
+                <h3 class="text-white font-semibold text-lg mb-4">Result</h3>
 
-            <!-- Result -->
-            <div class="text-md text-gray-300">
-                <strong class="text-white">Result:</strong> Vinyl Album
+                <div class="space-y-8">
+                    @foreach ($project['details'] as $block)
+                        @switch($block['type'])
+
+                            {{-- Pattern --}}
+                            @case('pattern')
+                                <p class="text-gray-300 leading-relaxed">{{ $block['content'] }}</p>
+                                <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
+                                <img src="{{ asset($block['url2']) }}" class="w-full rounded-lg shadow-md" alt="">
+                            @break
+
+                            {{-- Color Palette --}}
+                            @case('color_palette')
+                                <p class="text-gray-300 leading-relaxed">{{ $block['content'] }}</p>
+                                <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
+                                <div class="grid grid-cols-3 gap-4">
+                                    @foreach ($block['images'] as $url)
+                                        <img src="{{ asset($url) }}" class="w-full h-auto rounded shadow" alt="">
+                                    @endforeach
+                                </div>
+                                <p class="text-gray-300 leading-relaxed">{{ $block['text'] }}</p>
+                            @break
+
+                            {{-- graphic --}}
+                            @case('row3')
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                    @foreach ($block['items'] as $sub)
+                                        @switch($sub['type'])
+                                            @case('gallery')
+                                                <div class="space-y-4">
+                                                    @foreach ($sub['images'] as $img)
+                                                        <img src="{{ asset($img) }}" class="w-full rounded shadow" alt="">
+                                                    @endforeach
+                                                </div>
+                                            @break
+
+                                            @case('image')
+                                                <img src="{{ asset($sub['url']) }}" class="w-full rounded-lg shadow-lg" alt="">
+                                            @break
+                                        @endswitch
+                                    @endforeach
+                                </div>
+                            @break
+
+                            {{-- Gallery of images --}}
+                            @case('gallery')
+                                @if (!empty($block['title']))
+                                    <h4 class="text-xl font-semibold mb-2">{{ $block['title'] }}</h4>
+                                @endif
+                                <div class="grid grid-cols-3 gap-4">
+                                    @foreach ($block['images'] as $url)
+                                        <img src="{{ asset($url) }}" class="w-full h-auto rounded shadow" alt="">
+                                    @endforeach
+                                </div>
+                            @break
+
+                            {{-- Single image --}}
+                            @case('image')
+                                <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
+                            @break
+
+                            {{-- add more block types here as needed --}}
+                        @endswitch
+                    @endforeach
+                </div>
             </div>
+
         </div>
     </div>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Manrope', sans-serif;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-    </style>
 @endsection
