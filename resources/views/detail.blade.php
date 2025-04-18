@@ -22,7 +22,6 @@
 
             <hr class="w-full border-t-2 border-white my-6">
             <!-- Challenge Section -->
-            <!-- Challenge & Approach Section in 2-column layout -->
             <div class="mb-8">
                 <table class="w-full table-auto border-collapse border-0">
                     <tbody>
@@ -45,8 +44,7 @@
                     </tbody>
                 </table>
             </div>
-<hr class="my-6 border-white">
-
+            <hr class="my-6 border-white">
 
             <!-- Result (dynamic details) -->
             <div class="mb-8">
@@ -76,6 +74,7 @@
 
                             {{-- Color Palette --}}
                             @case('color_palette')
+                            <hr class="my-6 border-white">
                                 <p class="text-gray-300 leading-relaxed">{{ $block['content'] }}</p>
                                 <img src="{{ asset($block['url']) }}" class="w-full rounded-lg shadow-md" alt="">
                                 <div class="grid grid-cols-3 gap-4">
