@@ -162,95 +162,109 @@
         </div>
 
         <div class="container relative w-full flex items-center justify-center">
-            <div class="card-stack w-full max-w-4xl relative pb-80">
+            <div class="card-stack w-full max-w-4xl relative pb-20 sm:pb-80">
+                <!-- Cards -->
                 <!-- Card 1 - Pattern -->
                 <div class="card group" id="card1">
-                    <img src="{{ asset('images/cards/folder01.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Pattern" />
+                    <img src="{{ asset('images/cards/1.png') }}" class="w-full h-auto rounded-[15px]" alt="Pattern" />
                     <div class="card-overlay">
-                        <ul class="grid mt-32">
-                            <div class="grid gap-4">
-                                @foreach ($product as $project)
-                                    <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start max-w-full">
-                                            <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                                class="w-32 h-24 object-cover rounded-lg shadow-md shrink-0" />
-
-                                            <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
-                                                <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
-                                                <div class="flex flex-wrap gap-2">
-                                                    @foreach ($project['tags'] as $tag)
-                                                        <span
-                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
-                                                    @endforeach
-                                                </div>
+                        <!-- Added scrollable container for mobile -->
+                        <div
+                            class="grid mt-8 sm:mt-32 gap-2 sm:gap-4 overflow-y-auto max-h-[60vh] sm:max-h-none sm:overflow-visible">
+                            @foreach ($branding as $project)
+                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                    <div
+                                        class="bg-black/25 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-6 items-start">
+                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                            class="w-full sm:w-32 h-24 object-cover rounded-lg shadow-md" />
+                                        <div class="flex-1">
+                                            <h1 class="text-pink-400 text-xl sm:text-3xl font-semibold">
+                                                {{ $project['title'] }}</h1>
+                                            <p class="text-xs sm:text-sm text-pink-400 mb-2 sm:mb-3">{{ $project['year'] }}
+                                            </p>
+                                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                                @foreach ($project['tags'] as $tag)
+                                                    <span
+                                                        class="border border-white rounded-full px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm">
+                                                        {{ $tag }}
+                                                    </span>
+                                                @endforeach
                                             </div>
                                         </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </ul>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
                 <!-- Card 2 - Campaign -->
                 <div class="card group" id="card2">
-                    <img src="{{ asset('images/cards/folder02.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Campaign" />
+                    <img src="{{ asset('images/cards/2.png') }}" class="w-full h-auto rounded-[15px]" alt="Pattern" />
                     <div class="card-overlay">
-                        <ul class="grid mt-32">
-                            <div class="grid">
-                                @foreach ($campaign as $project)
-                                    <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
-                                            <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                                class="w-32 h-24 object-cover rounded-lg shadow-md shrink-0" />
-                                            <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
-                                                <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
-                                                <div class="flex flex-wrap gap-2">
-                                                    @foreach ($project['tags'] as $tag)
-                                                        <span
-                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
-                                                    @endforeach
-                                                </div>
+                        <!-- Added scrollable container for mobile -->
+                        <div
+                            class="grid mt-8 sm:mt-32 gap-2 sm:gap-4 overflow-y-auto max-h-[60vh] sm:max-h-none sm:overflow-visible">
+                            @foreach ($campaign as $project)
+                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                    <div
+                                        class="bg-black/25 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-6 items-start">
+                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                            class="w-full sm:w-32 h-24 object-cover rounded-lg shadow-md" />
+                                        <div class="flex-1">
+                                            <h1 class="text-pink-400 text-xl sm:text-3xl font-semibold">
+                                                {{ $project['title'] }}</h1>
+                                            <p class="text-xs sm:text-sm text-pink-400 mb-2 sm:mb-3">
+                                                {{ $project['year'] }}
+                                            </p>
+                                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                                @foreach ($project['tags'] as $tag)
+                                                    <span
+                                                        class="border border-white rounded-full px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm">
+                                                        {{ $tag }}
+                                                    </span>
+                                                @endforeach
                                             </div>
                                         </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </ul>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
                 <!-- Card 3 - Branding -->
                 <div class="card group" id="card3">
-                    <img src="{{ asset('images/cards/folder03.png') }}" class="w-full h-auto rounded-[15px] block"
-                        alt="Branding" />
+                    <img src="{{ asset('images/cards/3.png') }}" class="w-full h-auto rounded-[15px]" alt="Pattern" />
                     <div class="card-overlay">
-                        <ul class="grid mt-32">
-                            <div class="grid">
-                                @foreach ($branding as $project)
-                                    <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
-                                        <div class="bg-black/25 rounded-xl p-4 flex gap-6 items-start">
-                                            <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-                                                class="w-32 h-24 object-cover rounded-lg shadow-md shrink-0" />
-                                            <div>
-                                                <h1 class="text-pink-400 text-3xl font-semibold">{{ $project['title'] }}</h1>
-                                                <p class="text-sm text-pink-400 mb-3">{{ $project['year'] }}</p>
-                                                <div class="flex flex-wrap gap-2">
-                                                    @foreach ($project['tags'] as $tag)
-                                                        <span
-                                                            class="border border-white rounded-full px-3 py-1 text-sm">{{ $tag }}</span>
-                                                    @endforeach
-                                                </div>
+                        <!-- Added scrollable container for mobile -->
+                        <div
+                            class="grid mt-8 sm:mt-32 gap-2 sm:gap-4 overflow-y-auto max-h-[60vh] sm:max-h-none sm:overflow-visible">
+                            @foreach ($product as $project)
+                                <a href="{{ $project['link'] }}" class="block hover:opacity-80 transition">
+                                    <div
+                                        class="bg-black/25 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-6 items-start">
+                                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                                            class="w-full sm:w-32 h-24 object-cover rounded-lg shadow-md" />
+                                        <div class="flex-1">
+                                            <h1 class="text-pink-400 text-xl sm:text-3xl font-semibold">
+                                                {{ $project['title'] }}</h1>
+                                            <p class="text-xs sm:text-sm text-pink-400 mb-2 sm:mb-3">
+                                                {{ $project['year'] }}
+                                            </p>
+                                            <div class="flex flex-wrap gap-1 sm:gap-2">
+                                                @foreach ($project['tags'] as $tag)
+                                                    <span
+                                                        class="border border-white rounded-full px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm">
+                                                        {{ $tag }}
+                                                    </span>
+                                                @endforeach
                                             </div>
                                         </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </ul>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -263,7 +277,8 @@
         <!-- Full-width Background Container -->
         <div class="absolute inset-0 -z-10 w-full h-full">
             <!-- Horizontal Background Image -->
-            <img src="{{ asset('images/HomeBG2.png') }}" alt="Background" class="w-full h-full object-cover object-left">
+            <img src="{{ asset('images/HomeBG2.png') }}" alt="Background"
+                class="w-full h-full object-cover object-left">
         </div>
 
         <!-- Dark Overlay -->
