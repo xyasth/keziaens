@@ -22,12 +22,20 @@
             font-display: swap;
         }
         @font-face {
-            font-family: 'MyriadPro';
-            src: url("{{ asset('fonts/myriad-pro/MYRIADPRO-ITALIC.OTF') }}") format('opentype');
+            font-family: 'Manrope';
+            src: url("{{ asset('fonts/manrope/public/fonts/manrope/MANROPE-VARIABLEFONT_WGHT.TTF') }}") format('opentype');
             font-weight: 400;
-            font-style: italic;
+            font-style: normal;
             font-display: swap;
         }
+        @font-face {
+            font-family: 'Matton Script';
+            src: url("/fonts/MT-Matto-Script-Bold.ttf") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
 
         /* Jadikan MyriadPro sebagai font default, dan helper class */
         body {
@@ -38,6 +46,9 @@
         }
         .font-myriad {
             font-family: 'MyriadPro', sans-serif !important;
+        }
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
         }
     </style>
 

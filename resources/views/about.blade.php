@@ -11,6 +11,21 @@
             font-display: swap;
         }
 
+        @font-face {
+            font-family: 'Matton Script';
+            src: url("/fonts/MT-Matto-Script-Bold.ttf") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url("/fonts/spacegrotesk/SPACEGROTESK-VARIABLEFONT_WGHT.TTF") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
 
         * {
@@ -21,6 +36,7 @@
 
         /* Navbar Styles - Added to ensure it's above sidebar */
         .navbar {
+            /* font-family: 'Matton Script', sans-serif; */
             position: fixed;
             top: 0;
             left: 0;
@@ -54,6 +70,7 @@
 
         /* Updated Sidebar Styles */
         .sidebar {
+            /* font-family: 'Matton Script', sans-serif; */
             background-color: #111;
             color: #fff;
             width: 85%;
@@ -95,7 +112,7 @@
         .sidebar .intro p {
             font-size: 18px;
             margin-bottom: 5px;
-            font-family: 'Lampoon Brush', sans-serif;
+            font-family: 'Matton Script', sans-serif;
             color: white;
         }
 
@@ -123,6 +140,7 @@
             position: relative;
             padding-left: 30px;
             color: #f78da7;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .sidebar ul.softwares li {
@@ -130,6 +148,7 @@
             position: relative;
             padding-left: 20px;
             color: #f78da7;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .sidebar .contact-info {
@@ -293,6 +312,7 @@
         .timeline {
             position: relative;
             padding-left: 30px;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .timeline .entry {
@@ -333,7 +353,6 @@
                     transparent 5px,
                     transparent 10px);
         }
-
 
 
         .timeline .entry .title {
@@ -440,7 +459,7 @@
             .sidebar .intro p {
                 font-size: 20px;
                 margin-bottom: 5px;
-                font-family: 'Lampoon Brush', sans-serif;
+                font-family: 'Matton Script', sans-serif;
             }
 
         }
@@ -585,7 +604,7 @@
             .sidebar .intro p {
                 font-size: 22px;
                 margin-bottom: 5px;
-                font-family: 'Lampoon Brush', sans-serif;
+                font-family: 'Matton Script', sans-serif;
             }
         }
     </style>
@@ -839,6 +858,7 @@
                     </div>
 
                 </div>
+            </div>
 
             <script>
                 const sidebar = document.getElementById('sidebar');
