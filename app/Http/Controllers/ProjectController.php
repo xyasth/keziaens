@@ -120,14 +120,16 @@ class ProjectController extends Controller
             ],
         ],
 
+
+
         'tracklist-o9' => [
             'Tracklist'   => 'Tracklist o9',
             'title'       => 'Pattern: Hotel Tourism Business',
             'year'        => 2024,
             'image'       => 'images/Thumbnail/Thumbnail Project/o9_Thumbnail Pattern.png',
             'tags'        => ['Surface Pattern', 'Merchandise', 'Graphic on product', 'School project'],
-            'Challenges'  => "I aimed to capture the authentic essence of Kopitiam culture, balancing the traditional with the modern to create an inviting experience. The challenge was to design a visual identity that honored heritage while appealing to today's audience.",
-            'approach'    => 'I developed a design language that fused traditional motifs with sleek, contemporary aesthetics, creating a warm yet fresh brand experience. My approach celebrated time-honored flavors and aromas while engaging consumers with modern visual appeal.',
+            'Challenges'  => "I was tasked with encapsulating core values like professionalism, innovation, and creativity within a pattern that could seamlessly apply across various media. The challenge was to develop a design that was simple yet impactful, maintaining a distinctive brand presence.",
+            'approach'    => 'I utilized a flat design style paired with a signature palette of maroon, dark purple, and orange to craft a pattern that harmonizes simplicity with bold aesthetics. This approach gave me a robust and adaptable visual element that speaks to both industry professionals and consumers alike.',
             'Result'    => 'Pattern',
             'details'     => [
                 [
