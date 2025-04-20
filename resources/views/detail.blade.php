@@ -3,20 +3,20 @@
 @section('content')
     <div class="min-h-screen bg-black text-white p-6 font-sans">
         <!-- Project Content -->
-        <div class="max-w-5xl mx-auto">
+        <div class="font-space max-w-5xl mx-auto">
             <!-- Header -->
             <div class="mb-10">
-                <h1 class="text-6xl tracking-wide mb-2">{{ $project['Tracklist'] }}</h1>
+                <h1 class="font-acumin text-6xl tracking-wide mb-2">{{ $project['Tracklist'] }}</h1>
             </div>
             <hr class="border-t border-dashed border-white w-full">
             <!-- Project Title & Metadata -->
-            <h2 class="pt-8 text-6xl font-bold mb-2">{{ $project['title'] }}</h2>
+            <h2 class="font-manrope pt-8 text-6xl font-bold mb-2">{{ $project['title'] }}</h2>
             <p class="text-gray-300 text-md mb-4">{{ $project['year'] }}</p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2 text-sm mb-6">
                 @foreach ($project['tags'] as $tag)
-                    <span class="bg-gray-800 border border-gray-600 px-3 py-1 rounded-full">{{ $tag }}</span>
+                    <span class="font-manrope bg-gray-800 border border-gray-600 px-3 py-1 rounded-full">{{ $tag }}</span>
                 @endforeach
             </div>
 
@@ -26,18 +26,18 @@
                 <table class="w-full table-auto border-collapse border-0">
                     <tbody>
                         <tr>
-                            <td class="text-white font-semibold text-base pr-6 align-top border-0 w-1/5">
+                            <td class="font-manrope text-white font-semibold text-base pr-6 align-top border-0 w-1/5">
                                 Challenge
                             </td>
-                            <td class="text-white text-md border-0">
+                            <td class="font-space text-white text-md border-0">
                                 {{ $project['Challenges'] }}
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-white font-semibold text-base pr-6 align-top border-0 w-1/5 pt-4">
+                            <td class="font-manrope text-white font-semibold text-base pr-6 align-top border-0 w-1/5 pt-4">
                                 Approach
                             </td>
-                            <td class="text-white text-md border-0 pt-4">
+                            <td class="font-space text-white text-md border-0 pt-4">
                                 {{ $project['approach'] }}
                             </td>
                         </tr>

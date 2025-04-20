@@ -648,7 +648,7 @@
             <li>01 Graphic Design</li>
             <li>02 Branding</li>
             <li>03 Campaign Making</li>
-            <li>04 Editions</li>
+            <li>04 Editorial</li>
             <li>05 Video Editing</li>
             <li>06 Social Media Content</li>
         </ul>

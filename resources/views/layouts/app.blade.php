@@ -16,7 +16,7 @@
         }
         @font-face {
             font-family: 'MyriadPro';
-            src: url("{{ asset('fonts/myriad-pro/MYRIADPRO-BOLD.OTF') }}") format('opentype');
+            src: url("{{ asset('fonts/Acumin-BdItPro.otf') }}") format('opentype');
             font-weight: 700;
             font-style: normal;
             font-display: swap;
