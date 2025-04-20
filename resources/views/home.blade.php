@@ -76,16 +76,25 @@
                                 <div class="font-space w-full lg:w-auto text-sm space-y-3">
                                     <div>
                                         <p class="text-pink-300 font-medium">Contact</p>
-                                        <p class="font-space text-white">keziaens@gmail.com</p>
-                                        <p class="font-space text-white">behance.net/keziaens</p>
+                                        <p class="font-space text-white">
+                                            <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
+                                        </p>
+                                        <p class="font-space text-white">
+                                            <a href="https://behance.net/keziaens">behance.net/keziaens</a>
+
+                                        </p>
                                     </div>
                                     <div>
                                         <p class="text-pink-300 font-medium">Instagram</p>
-                                        <p class="font-space text-white">@keziaens</p>
+                                        <p class="font-space text-white">
+                                            <a href="https://instagram.com/keziaens">@keziaens</a>
+                                        </p>
                                     </div>
                                     <div>
-                                        <p class="text-pink-300 font-medium">Barcode</p>
-                                        <p class="font-space text-white">Row</p>
+                                        <p class="text-pink-300 font-medium">Spotify</p>
+                                        <p class="font-space text-white">
+                                            <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia Sagala</a>
+                                        </p>
                                     </div>
 
                                     <div class="mt-5">
@@ -114,11 +123,10 @@
                                     class="w-full h-full object-cover"> --}}
                             </div>
 
-                            <h2 class="text-2xl font-bold text-white">Kezia Ens</h2>
-                            <p class="font-space text-sm text-pink-200">Kezia Enginia Sagala</p>
-                            <p class="text-lg text-pink-300 font-medium my-2">Graphic Designer</p>
+                            <p class="font-space text-2xl text-pink-300">Kezia Enginia Sagala</p>
+                            <p class="text-lg text-pink-200 font-medium my-2">Graphic Designer</p>
 
-                            <p class="font-space text-xs text-white leading-relaxed mb-4">
+                            <p class="font-space text-xs text-white mb-4 max-w-[240px] mx-auto leading-relaxed outline-none border-none">
                                 I'm Kezia Enginia—graphic designer, visual storyteller, and music enthusiast.
                                 Driven by a relentless curiosity to blend art with innovation, I craft designs
                                 that resonate, provoke, and inspire. I love challenging creative conventions and
@@ -128,16 +136,25 @@
                             <div class="text-xs space-y-3">
                                 <div>
                                     <p class="text-pink-300 font-medium">Contact</p>
-                                    <p class="font-space">keziaens@gmail.com</p>
-                                    <p class="font-space ">behance.net/keziaens</p>
+                                    <p class="font-space">
+                                        <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
+                                    </p>
+                                    <p class="font-space ">
+                                        <a href="https://behance.net/keziaens">behance.net/keziaens</a>
+                                    </p>
                                 </div>
                                 <div>
                                     <p class="text-pink-300 font-medium">Instagram</p>
-                                    <p class="font-space ">@keziaens</p>
+                                    <p class="font-space ">
+                                        <a href="https://instagram.com/keziaens">@keziaens</a>
+                                    </p>
                                 </div>
                                 <div>
-                                    <p class="text-pink-300 font-medium">Barcode</p>
-                                    <p class="font-space ">Row</p>
+                                    <p class="text-pink-300 font-medium">Spotify
+                                    </p>
+                                    <p class="font-space ">Row
+                                        <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia Sagala</a>
+                                    </p>
                                 </div>
                             </div>
 
@@ -289,29 +306,28 @@
         <div class="relative z-10 h-full flex flex-col items-center justify-center px-4 py-20 ">
             <div class="max-w-2xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-400 mb-6">Contacts</h2>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                <p class="font-space text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
                     Email
                 </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                <p class="font-space text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
                     <a href="mailto:keziaens@gmail.com">keziaens@gmail.com</a>
                 </p>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                <p class="font-space text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
                     Instagram
                 </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                <p class="font-space text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
                     <a href="https://instagram.com/keziaens">@keziaens</a>
                 </p>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
+                <p class="font-space text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
                     Behance
                 </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                <p class="font-space text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
                     <a href="https://behance.net/keziaens">behance.net/keziaens</a>
                 </p>
-                <p class="text-sm sm:text-base text-pink-200 max-w-2xl mx-auto">
-                    <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q">Spotify</a>
-                </p>
-                <p class="text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                    <a href="https://behance.net/keziaens">Kezia Sagala</a>
+                <p class="font-space text-sm sm:text-base text-pink-200 max-w-2xl mx-auto" > Spotify</p>
+                    {{-- <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Spotify</a> --}}
+                <p class="font-space text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
+                    <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia Sagala</a>
                 </p>
             </div>
         </div>

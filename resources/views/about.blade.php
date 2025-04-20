@@ -630,7 +630,7 @@
         <div class="intro">
             <p>Hello,</p>
             <br>
-            <p>I'm Kezia Enginia Sagala. People often call me Kee,</p>
+            <p>I'm Kezia Enginia Sagala. People often call me Kez,</p>
             <p><span class="pink-text">I'm so enthusiastic graphic designer.</span> with a deep love for music,</p>
             <p>culture, and creative storytelling. My works blends design, branding and digital</p>
             <p>experiences, often inspired by the rhythm and energy of the music industry.</p>
