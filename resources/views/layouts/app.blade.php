@@ -35,6 +35,14 @@
             font-style: normal;
             font-display: swap;
         }
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url("/fonts/spacegrotesk/SPACEGROTESK-VARIABLEFONT_WGHT.TTF") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
 
 
         /* Jadikan MyriadPro sebagai font default, dan helper class */
@@ -49,6 +57,9 @@
         }
         .font-manrope {
             font-family: 'Manrope', sans-serif !important;
+        }
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif !important;
         }
     </style>
 

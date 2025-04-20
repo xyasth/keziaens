@@ -17,15 +17,15 @@
             <section class="h-screen flex flex-col items-center justify-center text-center px-4 relative">
 
                 <!-- Text Content -->
-                <h1 class="text-6xl md:text-8xl font-myriad text-black mb-2 z-10">
-                    Portfolio
-                </h1>
-                <p class="text-lg md:text-2xl text-black z-10">
-                    Kezia Enginia Sagala
-                </p>
+                <!-- Logo Image -->
+                <div class="w-full flex justify-center z-10">
+                    <img src="{{ asset('images/LOGO-PORTFOLIO.png') }}" alt="Kezia's Portfolio Logo"
+                        class="max-w-[70%] md:max-w-[40%] h-auto object-contain" />
+                </div>
+
 
                 <!-- Scroll Info -->
-                <p class="text-sm pt-10 text-white">Scroll to get your tickets</p>
+                <p class="text-sm3 pt-10 text-white">Scroll to get your tickets</p>
 
                 <!-- Scroll Button -->
                 <button onclick="scrollToAbout()"
@@ -64,27 +64,28 @@
                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="flex-1 text-center lg:text-left">
-                                    <h2 class="text-2xl sm:text-3xl font-bold text-pink-300">Kezia Enginia Sagala</h2>
-                                    <p class="text-pink-200 text-sm mb-4">SACRAHIO BREEDUP HOUR</p>
-                                    <p class="text-white text-sm sm:text-base mb-6 leading-relaxed">
+                                    <h2 class="font-space text-2xl sm:text-3xl font-bold text-pink-300">Kezia Enginia Sagala
+                                    </h2>
+                                    <p class="text-pink-200 text-sm mb-4">Graphic Designer</p>
+                                    <p class="font-space text-white text-sm sm:text-base mb-6 leading-relaxed">
                                         I'm Kezia Enginia—graphic designer, visual storyteller, and music enthusiast.
                                         Driven by a relentless curiosity to blend art with innovation, I craft designs that
                                         resonate, provoke, and inspire.
                                     </p>
                                 </div>
-                                <div class="w-full lg:w-auto text-sm space-y-3">
+                                <div class="font-space w-full lg:w-auto text-sm space-y-3">
                                     <div>
                                         <p class="text-pink-300 font-medium">Contact</p>
-                                        <p class="text-white">keziaens@gmail.com</p>
-                                        <p class="text-white">behance.net/keziaens</p>
+                                        <p class="font-space text-white">keziaens@gmail.com</p>
+                                        <p class="font-space text-white">behance.net/keziaens</p>
                                     </div>
                                     <div>
                                         <p class="text-pink-300 font-medium">Instagram</p>
-                                        <p class="text-white">@keziaens</p>
+                                        <p class="font-space text-white">@keziaens</p>
                                     </div>
                                     <div>
                                         <p class="text-pink-300 font-medium">Barcode</p>
-                                        <p class="text-white">Row</p>
+                                        <p class="font-space text-white">Row</p>
                                     </div>
 
                                     <div class="mt-5">
@@ -114,10 +115,10 @@
                             </div>
 
                             <h2 class="text-2xl font-bold text-white">Kezia Ens</h2>
-                            <p class="text-sm text-pink-200">Kezia Enginia Sagala</p>
+                            <p class="font-space text-sm text-pink-200">Kezia Enginia Sagala</p>
                             <p class="text-lg text-pink-300 font-medium my-2">Graphic Designer</p>
 
-                            <p class="text-xs text-white leading-relaxed mb-4">
+                            <p class="font-space text-xs text-white leading-relaxed mb-4">
                                 I'm Kezia Enginia—graphic designer, visual storyteller, and music enthusiast.
                                 Driven by a relentless curiosity to blend art with innovation, I craft designs
                                 that resonate, provoke, and inspire. I love challenging creative conventions and
@@ -127,16 +128,16 @@
                             <div class="text-xs space-y-3">
                                 <div>
                                     <p class="text-pink-300 font-medium">Contact</p>
-                                    <p>keziaens@gmail.com</p>
-                                    <p>behance.net/keziaens</p>
+                                    <p class="font-space">keziaens@gmail.com</p>
+                                    <p class="font-space ">behance.net/keziaens</p>
                                 </div>
                                 <div>
                                     <p class="text-pink-300 font-medium">Instagram</p>
-                                    <p>@keziaens</p>
+                                    <p class="font-space ">@keziaens</p>
                                 </div>
                                 <div>
                                     <p class="text-pink-300 font-medium">Barcode</p>
-                                    <p>Row</p>
+                                    <p class="font-space ">Row</p>
                                 </div>
                             </div>
 
@@ -156,7 +157,7 @@
     </div>
 
     <!-- Tracklist Section -->
-    <section id="tracklist" class="bg-black text-white px-4 sm:px-8 lg:px-16 relative overflow-hidden py-20">
+    <section id="tracklist" class="font-manrope bg-black text-white px-4 sm:px-8 lg:px-16 relative overflow-hidden py-20">
         <div class="max-w-2xl relative pl-8 md:pl-10 lg:pl-64 mb-12">
             <p class="text-white text-5xl">Tracklist</p>
         </div>
