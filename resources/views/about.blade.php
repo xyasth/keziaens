@@ -165,10 +165,17 @@
 
         .sidebar .contact-info strong {
             display: block;
-            color: #FFFFFF;
-            margin-bottom: 5px;
-            font-size: 14px;
+            font-size: 16px;
+
+            color: transparent;
+            /* Hilangkan fill */
+            -webkit-text-stroke: 0.3px #ffffff;
+            /* Warna outline */
+            text-stroke: 1px #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
 
         .sidebar a {
             color: #fff;
@@ -518,50 +525,55 @@
                 background-size: 5px 5px;
                 background-position: 0 0;
             }
-            .year {
-            position: absolute;
-            right: 50px;
-            top: 0;
-            font-size: 15px;
-            color: #f78da7;
-        }
-        .subtitle {
-            max-width: 300px;
-            font-size: 15px;
-            color: #f78da7;
-            margin-bottom: 5px;
-        }
 
-        .details {
-            margin: 0;
-            padding-left: 40px;
-            font-size: 14px;
-            color: #f78da7;
-            max-width: 300px;
-        }
-        .timeline .entry .title {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #f78da7;
-            max-width: 200px;
-        }
-        .timeline .entry::before {
-            content: "";
-            position: absolute;
-            left: -15px;
-            /* Adjust this to center the dot on the dashed line */
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .timeline {
-            position: relative;
-            padding-left: 10px;
-        }
+            .year {
+                position: absolute;
+                right: 50px;
+                top: 0;
+                font-size: 15px;
+                color: #f78da7;
+            }
+
+            .subtitle {
+                max-width: 300px;
+                font-size: 15px;
+                color: #f78da7;
+                margin-bottom: 5px;
+            }
+
+            .details {
+                margin: 0;
+                padding-left: 40px;
+                font-size: 14px;
+                color: #f78da7;
+                max-width: 300px;
+            }
+
+            .timeline .entry .title {
+                font-weight: 600;
+                font-size: 18px;
+                margin-bottom: 5px;
+                color: #f78da7;
+                max-width: 200px;
+            }
+
+            .timeline .entry::before {
+                content: "";
+                position: absolute;
+                left: -15px;
+                /* Adjust this to center the dot on the dashed line */
+                top: 6px;
+                width: 10px;
+                height: 10px;
+                background-color: #000;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            .timeline {
+                position: relative;
+                padding-left: 10px;
+            }
         }
 
         @media (hover: none) and (pointer: coarse) {
@@ -596,8 +608,10 @@
         /* Breakpoint desktop */
         @media (min-width: 1024px) {
             .profile-image-container {
-                max-width: 800px;
-                /* container makin lebar, tapi tetap 3:1 */
+                max-width: none;
+                /* hapus batas maksimum */
+                width: 100%;
+                /* pastikan lebar penuh sidebar */
             }
 
             .sidebar .intro p {
@@ -770,7 +784,8 @@
                     <div class="title">Mentor</div>
                     <div class="subtitle">
                         Mentoring Department,
-                    <br> Universitas Ciputra</div>
+                        <br> Universitas Ciputra
+                    </div>
                     <ul class="details">
                         <li>Provided academic mentoring and onboarding support.</li>
                         <li>Led discussions, creative exercises, and sharing sessions.</li>
@@ -829,8 +844,8 @@
                         <div class="subtitle">International Competition</div>
                         <ul class="details">
                             <li> Developed an immersive experience
-                            design strategy within a competitive
-                            entrepreneurial context.</li>
+                                design strategy within a competitive
+                                entrepreneurial context.</li>
                         </ul>
                         <div class="year">2024</div>
                     </div>
@@ -850,7 +865,7 @@
                         <div class="title">Best Project, Entrepreneurship Innovation in Creative Industry</div>
                         <div class="subtitle">School Competition</div>
                         <ul class="details">
-                            <li>Created 'UPCV', a recycled bag brand
+                            <li>Created 'UPC', a recycled bag brand
                                 empowering local sewing communities in Surabaya from a sustainable production design.</li>
                         </ul>
                         <div class="year">2023</div>

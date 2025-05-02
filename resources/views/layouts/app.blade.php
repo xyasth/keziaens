@@ -8,22 +8,22 @@
 
     <style>
         @font-face {
-            font-family: 'MyriadPro';
-            src: url("{{ asset('fonts/myriad-pro/MYRIADPRO-REGULAR.OTF') }}") format('opentype');
+            font-family: 'AcuPro';
+            src: url("{{ asset('fonts/Acumin-RPro.otf') }}") format('opentype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
-            font-family: 'MyriadPro';
-            src: url("{{ asset('fonts/Acumin-BdItPro.otf') }}") format('opentype');
+            font-family: 'Acumin';
+            src: url("{{ asset('fonts/Acumin-BdPro.otf') }}") format('opentype');
             font-weight: 700;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: 'Manrope';
-            src: url("{{ asset('fonts/manrope/public/fonts/manrope/MANROPE-VARIABLEFONT_WGHT.TTF') }}") format('opentype');
+            src: url("{{ asset('fonts/manrope/MANROPE-VARIABLEFONT_WGHT.TTF') }}") format('opentype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -49,7 +49,6 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'MyriadPro', sans-serif !important;
             background-color: #f9fafb; /* sesuai bg-gray-50 */
         }
         .font-myriad {
@@ -60,6 +59,12 @@
         }
         .font-space {
             font-family: 'Space Grotesk', sans-serif !important;
+        }
+        .font-acumin {
+            font-family: 'Acumin', sans-serif !important;
+        }
+        .font-acupro {
+            font-family: 'AcuPro', sans-serif !important;
         }
     </style>
 

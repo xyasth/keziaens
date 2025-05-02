@@ -24,7 +24,7 @@
 
             <!-- Sidebar Links -->
             <div class="w-full text-center">
-                <a href="/about" class="text-2xl font-semibold hover:text-gray-300 block pb-2">About</a>
+                <a href="/about" class="text-2xl font-semibold not-italic hover:text-gray-300 block pb-2">About</a>
                 <div class="border-b-2 border-dotted border-gray-500 w-3/4 mx-auto"></div>
             </div>
 

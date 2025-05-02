@@ -6,7 +6,7 @@
         <div class="font-space max-w-5xl mx-auto">
             <!-- Header -->
             <div class="mb-10">
-                <h1 class="font-acumin text-6xl tracking-wide mb-2">{{ $project['Tracklist'] }}</h1>
+                <h1 class="font-acupro text-6xl tracking-wide mb-2">{{ $project['Tracklist'] }}</h1>
             </div>
             <hr class="border-t border-dashed border-white w-full">
             <!-- Project Title & Metadata -->

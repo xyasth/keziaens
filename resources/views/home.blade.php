@@ -25,7 +25,7 @@
 
 
                 <!-- Scroll Info -->
-                <p class="text-sm3 pt-10 text-white">Scroll to get your tickets</p>
+                <p class="font-space text-sm3 pt-10 text-white">Scroll to get your tickets</p>
 
                 <!-- Scroll Button -->
                 <button onclick="scrollToAbout()"
@@ -40,8 +40,8 @@
                 <!-- Copyright & Credit - Responsive -->
                 <div
                     class="absolute bottom-2 left-20 right-20 flex flex-col sm:flex-row justify-between items-center text-xs text-white z-30 gap-1 sm:gap-0">
-                    <div class="text-center sm:text-left">© 2025 Kezia Enginia Sagala</div>
-                    <div class="text-center sm:text-right">Website by Bernicko & Prayogo</div>
+                    <div class="font-space text-center sm:text-left">© 2025 Kezia Enginia Sagala</div>
+                    <div class="font-space text-center sm:text-right">Website by Bernicko & Prayogo</div>
                 </div>
             </section>
 
@@ -93,7 +93,9 @@
                                     <div>
                                         <p class="text-pink-300 font-medium">Spotify</p>
                                         <p class="font-space text-white">
-                                            <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia Sagala</a>
+                                            <a
+                                                href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia
+                                                Sagala</a>
                                         </p>
                                     </div>
 
@@ -111,7 +113,7 @@
                     </div>
 
                     <!-- MOBILE VIEW -->
-                    <div class="block sm:hidden relative z-10">
+                    <div class="block sm:hidden relative z-10 bg-black bg-opacity-80 rounded-3xl overflow-hidden">
                         <!-- Background Image Mobile -->
                         <img src="{{ asset('images/TICKET-10.png') }}" alt="Ticket Background Mobile"
                             class="absolute inset-0 w-full h-[130%] object-cover rounded-3xl z-0" />
@@ -126,7 +128,8 @@
                             <p class="font-space text-2xl text-pink-300">Kezia Enginia Sagala</p>
                             <p class="text-lg text-pink-200 font-medium my-2">Graphic Designer</p>
 
-                            <p class="font-space text-xs text-white mb-4 max-w-[240px] mx-auto leading-relaxed outline-none border-none">
+                            <p
+                                class="font-space text-xs text-white mb-4 max-w-[240px] mx-auto leading-relaxed outline-none border-none">
                                 I'm Kezia Enginia—graphic designer, visual storyteller, and music enthusiast.
                                 Driven by a relentless curiosity to blend art with innovation, I craft designs
                                 that resonate, provoke, and inspire. I love challenging creative conventions and
@@ -153,7 +156,9 @@
                                     <p class="text-pink-300 font-medium">Spotify
                                     </p>
                                     <p class="font-space ">Row
-                                        <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia Sagala</a>
+                                        <a
+                                            href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia
+                                            Sagala</a>
                                     </p>
                                 </div>
                             </div>
@@ -175,8 +180,8 @@
 
     <!-- Tracklist Section -->
     <section id="tracklist" class="font-manrope bg-black text-white px-4 sm:px-8 lg:px-16 relative overflow-hidden py-20">
-        <div class="max-w-2xl relative pl-8 md:pl-10 lg:pl-64 mb-12">
-            <p class="text-white text-5xl">Tracklist</p>
+        <div class=" px-4 sm:px-8 lg:px-20 w-full max-w-4xl relative my-2p0 z-10">
+            <p class="text-white text-5xl mb-4 text-center sm:text-left z-10">Tracklist</p>
         </div>
 
         <div class="container relative w-full flex items-center justify-center">
@@ -198,7 +203,8 @@
                                         <div class="flex-1">
                                             <h1 class="text-pink-400 text-xl sm:text-3xl font-semibold">
                                                 {{ $project['title'] }}</h1>
-                                            <p class="text-xs sm:text-sm text-pink-400 mb-2 sm:mb-3">{{ $project['year'] }}
+                                            <p class="text-xs sm:text-sm text-pink-400 mb-2 sm:mb-3">
+                                                {{ $project['year'] }}
                                             </p>
                                             <div class="flex flex-wrap gap-1 sm:gap-2">
                                                 @foreach ($project['tags'] as $tag)
@@ -324,10 +330,12 @@
                 <p class="font-space text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
                     <a href="https://behance.net/keziaens">behance.net/keziaens</a>
                 </p>
-                <p class="font-space text-sm sm:text-base text-pink-200 max-w-2xl mx-auto" > Spotify</p>
-                    {{-- <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Spotify</a> --}}
+                <p class="font-space text-sm sm:text-base text-pink-200 max-w-2xl mx-auto"> Spotify</p>
+                {{-- <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Spotify</a> --}}
                 <p class="font-space text-2xl sm:text-3xl font-bold text-pink-400 max-w-2xl mx-auto mb-5">
-                    <a href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia Sagala</a>
+                    <a
+                        href="https://open.spotify.com/artist/2P846ZW0bC8S4zjBLoZ49p?si=QYyQf2t0QuOVQXNu5wKX4Q&nd=1&dlsi=5c1c524f866d4913">Kezia
+                        Sagala</a>
                 </p>
             </div>
         </div>
